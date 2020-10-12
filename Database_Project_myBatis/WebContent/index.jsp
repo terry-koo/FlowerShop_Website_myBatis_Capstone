@@ -16,16 +16,18 @@
   />
 </a>
 <p id="token-result"></p>
+<p id="user-info"></p>
 <img id="ph" src="" />
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript">
 
-Kakao.init('102de34d8dd205870a81dbfbe3b16643');
+Kakao.init('939c6aeb4a224596f6dd2be2e061a4c2');
 console.log("Kakao init : "+Kakao.isInitialized());
 
   function loginWithKakao() {
     Kakao.Auth.authorize({
-      redirectUri: 'http://localhost:8080/kakao_login_testP/index.jsp'
+      redirectUri: 'http://localhost:8080/kakao_login_testP/index.jsp',
+      scope : "account_email, age_range, gender, birthday,"
     })
   }
   // 아래는 데모를 위한 UI 코드입니다.
@@ -43,20 +45,28 @@ console.log("Kakao init : "+Kakao.isInitialized());
     if (parts.length === 2) return parts.pop().split(";").shift();
   }
   
-
+Kakao.Auth.login({
+	success:function(authObj){
 		  Kakao.API.request({
 			  url:'/v2/user/me',
 			  success:function(res){
 				  alert(JSON.stringify(res))
 				  console.log(res);
 				  var id = res.id;
-				  var email = res.kakao_account.email;
-				  var name = res.properties.nickname;
-				  var html = '<br>'+email+'<br>'+name;
-				  document.getElementById('token-result').innerText = html;
+				  var email = res.kakao_account.email+"<br>";
+				  var name = res.properties.nickname+"<br>";
+				  var gender = res.kakao_account.gender+"<br>";
+				  var age_range = res.kakao_account.age_range+"<br>"
+				  var birthday = res.kakao_account.birthday+"<br>"
+				  var html = email+name+gender+age_range+birthday;
+				  document.getElementById('user-info').innerHTML = html;
 				  document.getElementById('ph').src = res.properties.profile_image;
 			  }
+			  
 		  })
+	},
+	scope:"account_email, age_range, gender, birthday,"
+})
 
   
   
