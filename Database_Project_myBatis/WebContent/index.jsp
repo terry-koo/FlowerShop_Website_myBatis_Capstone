@@ -26,7 +26,7 @@ console.log("Kakao init : "+Kakao.isInitialized());
 
   function loginWithKakao() {
     Kakao.Auth.authorize({
-      redirectUri: 'http://localhost:8080/kakao_login_testP/index.jsp',
+      redirectUri: 'http://localhost:8080/Database_Project_myBatis/index.jsp',
       scope : "account_email, age_range, gender, birthday,"
     })
   }
@@ -54,18 +54,18 @@ Kakao.Auth.login({
 				  console.log(res);
 				  var id = res.id;
 				  var email = res.kakao_account.email+"<br>";
-				  var name = res.properties.nickname+"<br>";
+				  var name = res.properties.nickname+"<br>";  
 				  var gender = res.kakao_account.gender+"<br>";
 				  var age_range = res.kakao_account.age_range+"<br>"
 				  var birthday = res.kakao_account.birthday+"<br>"
-				  var html = email+name+gender+age_range+birthday;
+				  var html = email+gender+age_range+birthday +name;
 				  document.getElementById('user-info').innerHTML = html;
 				  document.getElementById('ph').src = res.properties.profile_image;
 			  }
 			  
 		  })
 	},
-	scope:"account_email, age_range, gender, birthday,"
+	scope:"account_email, age_range, gender, birthday,profile"
 })
 
   
