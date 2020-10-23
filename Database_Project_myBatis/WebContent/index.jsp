@@ -58,7 +58,9 @@ Kakao.Auth.login({
 				  var gender = res.kakao_account.gender+"<br>";
 				  var age_range = res.kakao_account.age_range+"<br>"
 				  var birthday = res.kakao_account.birthday+"<br>"
-				  var html = email+name+gender+age_range+birthday;
+				  var token = "token= "+authObj.access_token+"<br>";
+				  var token_expire = "expires_in= "+authObj.expires_in+"<br>";
+				  var html = id+email+name+gender+age_range+birthday+token+token_expire;
 				  document.getElementById('user-info').innerHTML = html;
 				  document.getElementById('ph').src = res.properties.profile_image;
 			  }
