@@ -1,11 +1,11 @@
 import mybatis.model.test;
-import mybatis.repository.session.TestSessionRepository;
+import mybatis.repository.session.SessionRepository;
 
 public class Start {
 	public static void main(String[] args) {
 		
 		  long id = 1; 
-		  TestSessionRepository a = new TestSessionRepository(); 
+		  SessionRepository a = new SessionRepository(); 
 		  test t = a.selectIdNameByID(id);
 		  System.out.println(t.getName());
 		  System.out.println(t.getSex());

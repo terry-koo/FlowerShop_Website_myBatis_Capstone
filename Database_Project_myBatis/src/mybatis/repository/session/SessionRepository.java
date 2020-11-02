@@ -11,7 +11,7 @@ import mybatis.model.test;
 
 
 
-public class TestSessionRepository {
+public class SessionRepository {
 	
 	private SqlSessionFactory getSqlSessionFactory() {
 		String resource = "config.xml";
