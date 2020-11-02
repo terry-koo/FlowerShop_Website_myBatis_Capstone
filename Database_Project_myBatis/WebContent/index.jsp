@@ -27,7 +27,7 @@ console.log("Kakao init : "+Kakao.isInitialized());
   function loginWithKakao() {
     Kakao.Auth.authorize({
       redirectUri: 'http://localhost:8080/Database_Project_myBatis/index.jsp',
-      scope : "account_email, age_range, gender, birthday,"
+      /* scope:"account_email, age_range, gender, birthday,profile" */
     })
   }
   // 아래는 데모를 위한 UI 코드입니다.
@@ -65,7 +65,7 @@ Kakao.Auth.login({
 			  
 		  })
 	},
-	scope:"account_email, age_range, gender, birthday,profile"
+	 scope:"account_email, age_range, gender, birthday,profile" 
 })
 
   
