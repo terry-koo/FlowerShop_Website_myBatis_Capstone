@@ -105,7 +105,7 @@
 		</div>
 	</nav>
 
-	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/Sunflower_from_Silesia2.jpg);">
+	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/tulips-2068692_1920.jpg);">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -144,7 +144,7 @@
 					<%}else{ %>
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1 >박사플로리스트 꽃꽃이</h1>
-								<h2 style="margin:auto; color:white; background-color: rgba( 0, 0, 0, 0.5 ); width:330px;">[ &nbsp온라인에서 &nbsp 편하게  &nbsp주문하세요 &nbsp]</h2>
+								<h2 style="margin:auto; color:white; background-color: rgba( 0, 0, 0, 0.5 ); width:280px;">[ 문의 : 055-746-2606 ]</h2>
 								<br>
 							<p>
 								<a href="/seedshop/templete/login.jsp" class="btn btn-primary btn-lg">로그인</a> 
