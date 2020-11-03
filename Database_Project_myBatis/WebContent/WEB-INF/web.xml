@@ -10,14 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <jsp-config>
-  	<jsp-property-group>
-  		<url-pattern>/home/*</url-pattern>
-  		<include-prelude>/home/header.jspf</include-prelude>
-  		<include-coda>/home/footer.jspf</include-coda>
-  	</jsp-property-group>
-  
-  </jsp-config>
+
   
   
   
