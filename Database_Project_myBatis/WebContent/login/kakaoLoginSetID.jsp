@@ -10,7 +10,7 @@
 
 <%
 	String kakaoid = request.getParameter("kakaoid");
-	session.setAttribute("kakaoid", kakaoid);
+	session.setAttribute("session_customer_id", kakaoid);
 %>
 
 <%=kakaoid %>
