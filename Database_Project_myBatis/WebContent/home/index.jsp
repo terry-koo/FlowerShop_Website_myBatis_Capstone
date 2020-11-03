@@ -38,31 +38,26 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-xs-2">
-					<div id="gtco-logo"><a href="index.jsp">SeedShop</a></div>
+					<div id="gtco-logo"><a href="index.jsp">박사플로리스트</a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
-						<li class="active"><a href="index.jsp">Home</a></li>
-						<li><a href="About.jsp">About</a></li>
+						<li class="active"><a href="index.jsp">홈으로</a></li>
+						<li><a href="About.jsp">공지사항</a></li>
 						<li class="has-dropdown">
-							<a>SHOP</a>
+							<a>구매하기</a>
 							<ul class="dropdown">
-								<li><a href="Seed.jsp">SEED</a></li>
-								<li><a href="Plant.jsp">PLANT</a></li>
+								<li><a href="Seed.jsp">꽃</a></li>
+								<li><a href="Plant.jsp">정기 배송</a></li>
 							</ul>
 						</li>
+						<li><a href="index.jsp">장바구니</a></li>
 						<li class="has-dropdown">
-							<a>My</a>
+							<a href="/seedshop/home/NewFile.jsp">내 정보</a>
 							<ul class="dropdown">
-								<li><a href="Orders.jsp">ORDERS</a></li>
-								<li><a href="Profile.jsp">PROFILE</a></li>
-							</ul>
-						</li>
-						<li class="has-dropdown">
-							<a href="/seedshop/home/NewFile.jsp">Contact</a>
-							<ul class="dropdown">
-								<li><a href="Livechat.jsp">LIVE CHAT</a></li>
-								<li><a href="Call.jsp">CALL</a></li>
+								<li><a href="Livechat.jsp">주문내역</a></li>
+								<li><a href="Call.jsp">프로필</a></li>
+								<li><a href="Call.jsp">쿠폰</a></li>
 							</ul>
 						</li>
 						
@@ -110,7 +105,7 @@
 		</div>
 	</nav>
 
-	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/Sunflower_from_Silesia2.jpg);">
+	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/tulips-2068692_1920.jpg);">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -148,8 +143,8 @@
 							
 					<%}else{ %>
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1 >씨앗상점에 오신 걸 환영합니다</h1>
-								<h2 style="margin:auto; color:white; background-color: rgba( 0, 0, 0, 0.5 ); width:330px;">[ &nbsp온라인에서 &nbsp 편하게  &nbsp주문하세요 &nbsp]</h2>
+							<h1 >박사플로리스트 꽃꽃이</h1>
+								<h2 style="margin:auto; color:white; background-color: rgba( 0, 0, 0, 0.5 ); width:280px;">[ 문의 : 055-746-2606 ]</h2>
 								<br>
 							<p>
 								<a href="/seedshop/templete/login.jsp" class="btn btn-primary btn-lg">로그인</a> 
