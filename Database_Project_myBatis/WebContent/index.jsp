@@ -26,8 +26,8 @@ console.log("Kakao init : "+Kakao.isInitialized());
 
   function loginWithKakao() {
     Kakao.Auth.authorize({
-      redirectUri: 'http://localhost:8080/kakao_login_testP/index.jsp',
-      scope : "account_email, age_range, gender, birthday,"
+      redirectUri: 'http://localhost:8080/Database_Project_myBatis/index.jsp',
+      /* scope:"account_email, age_range, gender, birthday,profile" */
     })
   }
   // 아래는 데모를 위한 UI 코드입니다.
@@ -54,20 +54,21 @@ Kakao.Auth.login({
 				  console.log(res);
 				  var id = res.id;
 				  var email = res.kakao_account.email+"<br>";
-				  var name = res.properties.nickname+"<br>";
+				  var name = res.properties.nickname+"<br>";  
 				  var gender = res.kakao_account.gender+"<br>";
 				  var age_range = res.kakao_account.age_range+"<br>"
 				  var birthday = res.kakao_account.birthday+"<br>"
 				  var token = "token= "+authObj.access_token+"<br>";
 				  var token_expire = "expires_in= "+authObj.expires_in+"<br>";
 				  var html = id+email+name+gender+age_range+birthday+token+token_expire;
+
 				  document.getElementById('user-info').innerHTML = html;
 				  document.getElementById('ph').src = res.properties.profile_image;
 			  }
 			  
 		  })
 	},
-	scope:"account_email, age_range, gender, birthday,"
+	 scope:"account_email, age_range, gender, birthday,profile" 
 })
 
   
