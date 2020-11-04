@@ -40,7 +40,7 @@
 	<body style="height:100%;">
 	
 	<div class="gtco-loader"></div>
-	<div id="page">
+	<div id="page" style="background-color:#C7DBD0; height:100%;">
 	<nav class="gtco-nav" role="navigation">
 		<div class="gtco-container">
 			<div class="row">
@@ -94,7 +94,7 @@
 	
 	
 		
-<div id="wrap" style="margin:auto; background-color:#C7DBD0; padding:80px; height:100%;">
+<div id="wrap" style="margin:auto;  padding:80px; height:100%;">
 
 <!--@@@@@@@@@@@@@@@@@@@  양식 시작    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->	
 

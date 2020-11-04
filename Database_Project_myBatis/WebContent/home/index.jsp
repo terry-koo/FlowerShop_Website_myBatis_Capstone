@@ -6,14 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>SeedShop</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+
 
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/animate.css">
@@ -29,7 +22,7 @@
 	<link rel="shortcut icon" href="images/favicon.ico" />
 	
 	</head>
-	<body>
+	<body style="height:100%">
 		
 	<div class="gtco-loader"></div>
 	
@@ -60,7 +53,7 @@
 								<li><a href="Call.jsp">쿠폰</a></li>
 							</ul>
 						</li>
-						
+<%-- 						
 						<!-- 로그인여부에 따라 보이는 항목이 다름 -->
 						<% if("true".equalsIgnoreCase((String)session.getAttribute("login"))||"true".equalsIgnoreCase((String)session.getAttribute("staff"))||"true".equalsIgnoreCase((String)session.getAttribute("master"))){%>
 						<li class="has-dropdown">
@@ -97,7 +90,7 @@
 						</li>
 						<%} %>
 						
-						
+						 --%>
 					</ul>
 				</div>
 			</div>
@@ -105,7 +98,7 @@
 		</div>
 	</nav>
 
-	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/tulips-2068692_1920.jpg);">
+	<header id="gtco-header" class="gtco-cover" role="banner" style="height:100%; background-image:url(images/tulips-2068692_1920.jpg);">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
