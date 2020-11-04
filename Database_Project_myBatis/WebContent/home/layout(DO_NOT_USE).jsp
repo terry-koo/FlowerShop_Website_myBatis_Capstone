@@ -34,11 +34,10 @@
 		  html, body { height:100%; overflow:hidden }
 
 		</style>
-
+		
 	</head>
 	
-	</head>
-	<body>
+	<body style="height:100%;">
 	
 	<div class="gtco-loader"></div>
 	<div id="page">
@@ -96,7 +95,9 @@
 	
 		
 <div id="wrap" style="margin:auto; background-color:#C7DBD0; padding:80px; height:100%;">
+
 <!--@@@@@@@@@@@@@@@@@@@  양식 시작    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->	
+
        
        
 
@@ -111,6 +112,7 @@
        
        
        
+
 <!--@@@@@@@@@@@@@@@@@@@  양식 끝    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->		     
 </div>
 	</div>
