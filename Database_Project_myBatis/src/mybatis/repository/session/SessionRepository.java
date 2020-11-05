@@ -1,12 +1,12 @@
 package mybatis.repository.session;
 
 import java.io.InputStream;
-
+import java.util.HashMap;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
+import mybatis.model.CustomerInfo;
 import mybatis.model.test;
 
 
@@ -16,7 +16,6 @@ public class SessionRepository {
 	private SqlSessionFactory getSqlSessionFactory() {
 		String resource = "config.xml";
 		InputStream inputStream;
-		
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
 		}catch(Exception e) {
@@ -37,4 +36,12 @@ public class SessionRepository {
 		}
 	}
 	
+	public CustomerInfo selectOneByHashMap(String uri, HashMap<String, String> parameter) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			return sqlSession.selectOne(uri, parameter);
+		}finally{
+			sqlSession.close();
+		}
+	}
 }

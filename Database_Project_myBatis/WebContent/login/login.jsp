@@ -12,9 +12,20 @@
 
 <body id="bodySet">
 
+<%
+	if(request.getParameter("loginFailed") != null){
+		
+%>
+<div id="loginFailedBox">
+	<h3 style="margin-top:0px;">로그인 실패</h3>
+</div>
+<%
+	}
+%>
+
 
 <div id="loginBox">
-<form action="" method="post">
+<form action="doLogin.jsp" method="post">
 
   <div class="container">
     <label for="uname"><b>이메일</b></label>

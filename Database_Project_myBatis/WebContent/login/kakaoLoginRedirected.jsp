@@ -42,7 +42,7 @@ Kakao.Auth.login({
 				  //document.getElementById('user-info').innerHTML = html;
 				  //document.getElementById('ph').src = res.properties.profile_image;
 				  var id = res.id;
-				  window.location.href = "http://localhost:8080/Database_Project_myBatis/login/kakaoLoginSetID.jsp?kakaoid="+id;
+				  window.location.href = "http://localhost:8080/Database_Project_myBatis/login/kakaoDoLogin.jsp?kakaoid="+id;
 				  
 			  }
 			  

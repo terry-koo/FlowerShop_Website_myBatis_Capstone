@@ -7,9 +7,16 @@
 	
 }
 #bodySet{
-	background-image:url("https://images.pexels.com/photos/545042/pexels-photo-545042.jpeg?cs=srgb&dl=pexels-burst-545042.jpg&fm=jpg")
+	background-image:url("https://images.pexels.com/photos/545042/pexels-photo-545042.jpeg?cs=srgb&dl=pexels-burst-545042.jpg&fm=jpg");
+	margin:0px;
 }
-
+#loginFailedBox{
+	width:100%;
+	height: 30px;
+	text-align:center;
+	background-color:#ff3a3a;
+	padding-top:10px;
+}
 
 
 

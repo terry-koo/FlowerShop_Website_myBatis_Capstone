@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper">
+  <select id="selectCustomerInfoByID" parameterType="java.util.HashMap" resultType="mybatis.model.CustomerInfo">
+    SELECT 
+    	cb.customer_id,
+    	cb.authority_code,
+    	cb.name,
+    	cb.email,
+    	cde.gender,
+    	cde.birthday,
+    	cde.address
+    FROM customer_basic cb JOIN customer_detail cde
+    ON cb.customer_id = cde.customer_id
+    WHERE cb.customer_id = #{id} 
+  </select>
+  
+  <select id="selectCustomerInfoByEmailAndPW" parameterType="java.util.HashMap" resultType="mybatis.model.CustomerInfo">
+    SELECT 
+    	cb.customer_id,
+    	cb.authority_code,
+    	cb.name,
+    	cb.email,
+    	cde.gender,
+    	cde.birthday,
+    	cde.address
+    FROM customer_basic cb JOIN customer_detail cde
+    ON cb.customer_id = cde.customer_id
+    WHERE cb.email = #{email} AND cb.password = #{password}
+  </select>
+</mapper>
