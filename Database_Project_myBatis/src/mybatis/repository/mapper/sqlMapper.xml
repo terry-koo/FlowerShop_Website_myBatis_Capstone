@@ -3,9 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.repository.mapper">
+  
   <select id="selectId" parameterType="long" resultType="mybatis.model.test">
     select id,name,sex
     from test
     where id = #{id} 
   </select>
+  
+  <insert id="insertProduct" parameterType="mybatis.model.Product">
+  	INSERT into product(product_variety_code,is_available,name,imform,text,price,quantity)
+  	VALUES (#{variety},#{isAvailable},#{name},#{imform},#{text},#{price},#{quantity})
+  </insert>
+  
 </mapper>

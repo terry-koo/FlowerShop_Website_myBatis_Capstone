@@ -9,7 +9,7 @@ public class Start {
 		  test t = a.selectIdNameByID(id);
 		  System.out.println(t.getName());
 		  System.out.println(t.getSex());
-		 
+		
 
 	}
 }

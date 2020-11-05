@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import mybatis.model.CustomerInfo;
 import mybatis.model.test;
+import mybatis.model.Product;
 
 
 
@@ -36,6 +37,7 @@ public class SessionRepository {
 		}
 	}
 	
+
 	public CustomerInfo selectOneByHashMap(String uri, HashMap<String, String> parameter) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
@@ -44,4 +46,21 @@ public class SessionRepository {
 			sqlSession.close();
 		}
 	}
+
+	
+	public Integer insertProduct(Product product) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.insertProduct";
+			int result = sqlSession.insert(statement,product);
+			if(result>0) {
+				sqlSession.commit();
+			}
+			return result;
+		}finally {
+			sqlSession.close();
+		}
+	}
+	
+
 }

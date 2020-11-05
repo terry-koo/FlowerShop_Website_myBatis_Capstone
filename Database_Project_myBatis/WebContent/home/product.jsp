@@ -100,7 +100,7 @@
 
 <br><br><br>
 
-<form action="product_insert">
+<form action="productInsert.jsp">
 
 <table border="1" width="700" >
 
@@ -109,11 +109,11 @@
   타입
   </td>
   <td width="350" align="left">
-  <select name="bookstri">
-   <option value="바구니">바구니</option>
-   <option value="화환">화환</option>
-   <option value="압화">압화</option>
-   <option value="화분식물">화분식물</option>
+  <select name="variety">
+   <option value="1">화환</option>
+   <option value="2">바구니</option>
+   <option value="3">압화</option>
+   <option value="4">화분식물</option>
   </select>
   </td>
  </tr>
@@ -151,29 +151,29 @@
   판매가능 여부
   </td>
   <td width="350" align="left">
-  <select name="bookstri">
-   <option value="바구니">가능</option>
-   <option value="화환">불가능</option>
+  <select name="available">
+   <option value="T">가능</option>
+   <option value="F">불가능</option>
   </select>
   </td>
  </tr>
  
  <tr>
   <td>이미지</td>
-  <td align="left"><input type="file" name="bookimg"></td>
+  <td align="left"><input type="file" name="img"></td>
  </tr>
  
  <tr>
   <td>상품 설명(간략하게)</td>
   <td align="left" >
-  <textarea name="text" style="width:500px; height:70px; resize:none;"></textarea>
+  <textarea name="imform" style="width:600px; height:100px; resize:none;"></textarea>
   </td>
  </tr>
  
   <tr>
   <td>게시글 내용</td>
   <td align="left" >
-  <textarea name="text" style="width:500px; height:200px; resize:none;"></textarea>
+  <textarea name="text" style="width:600px; height:200px; resize:none;"></textarea>
   </td>
  </tr>
  
@@ -184,17 +184,8 @@
 </table>
 </form>
 
-<!--@@@@@@@@@@@@@@@@@@@  양식 끝    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->		
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
+
 
 <!--@@@@@@@@@@@@@@@@@@@  양식 끝    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->		     
 </div>
