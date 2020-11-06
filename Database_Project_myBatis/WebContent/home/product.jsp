@@ -147,7 +147,7 @@
  
  <tr>
   <td>이미지</td>
-  <td align="left"><input type="file" name="img"></td>
+  <td align="left"><input type="file" name= "img"></td>
  </tr>
  
  <tr>
