@@ -118,6 +118,7 @@
   </td>
  </tr>
  
+ 
  <tr>
   <td>상품명</td>
   <td align="left"><input type="text" name="name" size="30"></td>
