@@ -166,6 +166,7 @@
  
  <tr>
   <td colspan="2"><input type="submit" value="상품등록">  <input type="reset" value="다시작성"></td>
+ 
  </tr>
  
 </table>
