@@ -148,7 +148,7 @@
  
 <tr>
   <td width="150">
-  판매가능 여부
+  판매가능 여부(게시글 공개 여부)
   </td>
   <td width="350" align="left">
   <select name="available">
@@ -160,7 +160,7 @@
  
  <tr>
   <td>이미지</td>
-  <td align="left"><input type="file" name="img"></td>
+  <td align="left"><input type="file" name= "img"></td>
  </tr>
  
  <tr>
