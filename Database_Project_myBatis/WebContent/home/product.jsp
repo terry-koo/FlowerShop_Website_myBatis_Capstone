@@ -119,19 +119,6 @@
  </tr>
  
  <tr>
-  <td width="150">
-  용도
-  </td>
-  <td width="350" align="left">
-  <label><input type="checkbox" name="type" value="축하"> 축하</label>
-  <label><input type="checkbox" name="type" value="결혼"> 결혼</label>
-  <label><input type="checkbox" name="type" value="입학"> 입학</label>
-  <label><input type="checkbox" name="type" value="장례"> 장례</label>
-  <label><input type="checkbox" name="type" value="이벤트"> 이벤트</label>
-  </td>
- </tr>
- 
- <tr>
   <td>상품명</td>
   <td align="left"><input type="text" name="name" size="30"></td>
  </tr>
@@ -148,7 +135,7 @@
  
 <tr>
   <td width="150">
-  판매가능 여부
+  판매가능 여부(게시글 공개 여부)
   </td>
   <td width="350" align="left">
   <select name="available">
