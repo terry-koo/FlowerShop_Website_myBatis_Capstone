@@ -118,18 +118,6 @@
   </td>
  </tr>
  
- <tr>
-  <td width="150">
-  용도
-  </td>
-  <td width="350" align="left">
-  <label><input type="checkbox" name="type" value="축하"> 축하</label>
-  <label><input type="checkbox" name="type" value="결혼"> 결혼</label>
-  <label><input type="checkbox" name="type" value="입학"> 입학</label>
-  <label><input type="checkbox" name="type" value="장례"> 장례</label>
-  <label><input type="checkbox" name="type" value="이벤트"> 이벤트</label>
-  </td>
- </tr>
  
  <tr>
   <td>상품명</td>
