@@ -7,16 +7,15 @@
     <environment id="development">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
-
       	<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="url" value="jdbc:mysql://jinju-flower-db.mysql.database.azure.com:3306/jinju_flower"/>
-            <property name="username" value="jinju_db_admin@jinju-flower-db"/>
-            <property name="password" value="passwordis123#"/>
+		<property name="url" value="jdbc:mysql://jinju-flower-db.mysql.database.azure.com:3306/jinju_flower"/>
+		<property name="username" value="jinju_db_admin@jinju-flower-db"/>
+        <property name="password" value="passwordis123#"/>
       </dataSource>
     </environment>
   </environments>
   <mappers>
     <mapper resource="mybatis/repository/mapper/sqlMapper.xml"/>
-    <mapper resource="mybatis/repository/mapper/customer.xml"/>
+    <mapper resource="mybatis/repository/mapper/customerMapper.xml"/>
   </mappers>
 </configuration>
