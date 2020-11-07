@@ -11,8 +11,18 @@
   </select>
   
   <insert id="insertProduct" parameterType="mybatis.model.Product">
-  	INSERT into product(product_variety_code,is_available,name,imform,text,price)
-  	VALUES (#{variety},#{isAvailable},#{name},#{imform},#{text},#{price})
+  	INSERT into product(product_id,product_variety_code,is_available,price,article_id)
+  	VALUES (#{productId},#{productVarietyCode},#{isAvailable},#{price},#{articleId})
+  </insert>
+  
+  <insert id="insertArticle" parameterType="mybatis.model.Article">
+  	INSERT into article(article_id,customer_id,title,content,is_linked_to_product,is_registered,registration_date)
+  	VALUES (#{articleId},#{customerId},#{title},#{content},#{isLinkedToProduct},#{isRegistered},#{registrationDate})
+  </insert>
+  
+  <insert id="insertPicture" parameterType="mybatis.model.Picture">
+  	INSERT into picture(picture_id,article_id,picture_path)
+  	VALUES (#{pictureId},#{articleId},#{picturePath})
   </insert>
   
 </mapper>

@@ -1,8 +1,9 @@
+<%@page import="mybatis.model.Article"%>
 <%@page import="oracle.net.aso.n"%>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>    
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>    
 <%@ page import="java.util.*" %> 
-<%@ page import="mybatis.model.Product" %>    
+<%@ page import="mybatis.model.*" %>    
 <%@ page import="mybatis.repository.session.SessionRepository" %>    
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +14,8 @@
 </head>
 <body>
 <%
-
+Date date = new Date();
+String tempPrimaryKey = date.toString();
 
 String uploadPath = application.getRealPath("//home//upload");
 int size= 10*1024*1024;
@@ -35,26 +37,50 @@ filename1 = multi.getFilesystemName(file1);
 origfilename1 = multi.getOriginalFileName(file1);
 
 
-int variety = Integer.parseInt(multi.getParameter("variety"));  
-String name = multi.getParameter("name");
+int productVarietyCode = Integer.parseInt(multi.getParameter("productVarietyCode"));  
+String title = multi.getParameter("title");
 int price = Integer.parseInt(multi.getParameter("price"));
 String available = multi.getParameter("available");
-String imform = multi.getParameter("imform");
-String text = multi.getParameter("text"); 
-
-
-Product product = new Product();
-product.setVariety(variety);
-product.setIsAvailable(available);
-product.setName(name);
-product.setImform(imform);
-product.setText(text);
-product.setPrice(price); 
+String content = multi.getParameter("content"); 
 
 
 SessionRepository a = new SessionRepository();
-Integer result = a.insertProduct(product);
 
+
+//article insert
+Article article = new Article();
+article.setArticleId(tempPrimaryKey);
+article.setContent(content);
+article.setCustomerId("adminID");
+article.setisLinkedToProduct("T");
+article.setIsRegistered("T");
+article.setRegistrationDate(date);
+article.setTitle(title);
+
+Integer result1 = a.insertArticle(article);
+
+
+//product insert
+Product product = new Product();
+product.setProductId(tempPrimaryKey);
+product.setProductVarietyCode(productVarietyCode);
+product.setIsAvailable(available);
+product.setPrice(price); 
+product.setArticleId(tempPrimaryKey);
+
+
+Integer result2 = a.insertProduct(product);
+
+
+//picture insert
+//추후에 서버에 올리고 나서 picturePath는 하드코딩되지 않게 경로에 맞춰서 수정해야함
+String picturePath = "http://localhost:8080/Database_Project_myBatis/home/upload/" + filename1;
+Picture picture = new Picture();
+picture.setArticleId(tempPrimaryKey);
+picture.setPictureId(tempPrimaryKey);
+picture.setPicturePath(picturePath);
+
+Integer result3 = a.insertPicture(picture);
 
 %>
 

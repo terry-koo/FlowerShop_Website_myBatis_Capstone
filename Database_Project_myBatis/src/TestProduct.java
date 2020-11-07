@@ -16,12 +16,7 @@ public static void main(String[] args) {
 
 
 	Product product = new Product();
-	product.setVariety(variety);
-	product.setIsAvailable(available);
-	product.setName(name);
-	product.setImform(imform);
-	product.setText(text);
-	product.setPrice(price);
+		product.setPrice(price);
 	//////
 
 	SessionRepository a = new SessionRepository();

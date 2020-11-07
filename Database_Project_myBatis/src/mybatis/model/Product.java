@@ -3,20 +3,18 @@ package mybatis.model;
 public class Product {
 	private long productVarietyCode;
 	private String isAvailable;
-	private String name;
-	private String imform;
-	private String text;
-	private int variety;
 	private long price;
+	private String articleId;
+	private String productId;
 	
 	
-	public int getVariety() {
-		return variety;
+	
+	public String getProductId() {
+		return productId;
 	}
-	public void setVariety(int variety) {
-		this.variety = variety;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
-	
 	public long getProductVarietyCode() {
 		return productVarietyCode;
 	}
@@ -29,23 +27,12 @@ public class Product {
 	public void setIsAvailable(String isAvailable) {
 		this.isAvailable = isAvailable;
 	}
-	public String getName() {
-		return name;
+	
+	public String getArticleId() {
+		return articleId;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getImform() {
-		return imform;
-	}
-	public void setImform(String imform) {
-		this.imform = imform;
-	}
-	public String getText() {
-		return text;
-	}
-	public void setText(String text) {
-		this.text = text;
+	public void setArticleId(String articleId) {
+		this.articleId = articleId;
 	}
 	public long getPrice() {
 		return price;
