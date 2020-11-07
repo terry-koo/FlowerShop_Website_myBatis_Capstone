@@ -15,7 +15,7 @@
 <body>
 <%
 Date date = new Date();
-String tempPrimaryKey = date.toString();
+int dateToHashCode = date.toString().hashCode();
 
 String uploadPath = application.getRealPath("//home//upload");
 int size= 10*1024*1024;
@@ -49,7 +49,7 @@ SessionRepository a = new SessionRepository();
 
 //article insert
 Article article = new Article();
-article.setArticleId(tempPrimaryKey);
+article.setArticleId("A"+dateToHashCode);
 article.setContent(content);
 article.setCustomerId("adminID");
 article.setisLinkedToProduct("T");
@@ -62,11 +62,11 @@ Integer result1 = a.insertArticle(article);
 
 //product insert
 Product product = new Product();
-product.setProductId(tempPrimaryKey);
+product.setProductId("P"+dateToHashCode);
 product.setProductVarietyCode(productVarietyCode);
 product.setIsAvailable(available);
 product.setPrice(price); 
-product.setArticleId(tempPrimaryKey);
+product.setArticleId("A"+dateToHashCode);
 
 
 Integer result2 = a.insertProduct(product);
@@ -76,8 +76,8 @@ Integer result2 = a.insertProduct(product);
 //추후에 서버에 올리고 나서 picturePath는 하드코딩되지 않게 경로에 맞춰서 수정해야함
 String picturePath = "http://localhost:8080/Database_Project_myBatis/home/upload/" + filename1;
 Picture picture = new Picture();
-picture.setArticleId(tempPrimaryKey);
-picture.setPictureId(tempPrimaryKey);
+picture.setArticleId("A"+dateToHashCode);
+picture.setPictureId("P"+dateToHashCode);
 picture.setPicturePath(picturePath);
 
 Integer result3 = a.insertPicture(picture);
@@ -85,6 +85,7 @@ Integer result3 = a.insertPicture(picture);
 %>
 
 <script>
+alert("insert success")
 history.go(-1);
 </script>
 
