@@ -19,7 +19,7 @@
 	String kakaoid = request.getParameter("kakaoid");
 	HashMap<String, String> parameter = new HashMap<>();
 	parameter.put("id", kakaoid);
-	String stmtURI = "mybatis.repository.mapper.selectCustomerInfoByID";
+	String stmtURI = "mybatis.repository.mapper.customerMapper.selectCustomerInfoByID";
 	
 	
 	
@@ -33,7 +33,7 @@
 
 	
 	
-	String redirect = (String)session.getAttribute("session_redirect");
+	String redirect = (String)session.getAttribute("session_redirectURL");
 	if(customerInfo != null){
 		session.setAttribute("session_customerInfo", customerInfo);
 		if( redirect != null){

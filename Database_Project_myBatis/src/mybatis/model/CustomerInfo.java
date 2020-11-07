@@ -9,6 +9,7 @@ public class CustomerInfo {
 	private String email;
 	private char gender;
 	private Date birthday;
+	private String phone;
 	private String address;
 	
 	public String getCustomer_id() {
@@ -47,6 +48,12 @@ public class CustomerInfo {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getAddress() {
 		return address;
 	}
@@ -63,6 +70,7 @@ public class CustomerInfo {
 		info.append("Email: "+email+"\n");
 		info.append("Gender: "+gender+"\n");
 		info.append("Birthday: "+birthday.toString()+"\n");
+		info.append("phone: "+ phone+"\n");
 		info.append("Address: "+address+"\n");
 		return info.toString();
 		
@@ -76,9 +84,11 @@ public class CustomerInfo {
 		info.append("Email: "+email+"<br>");
 		info.append("Gender: "+gender+"<br>");
 		info.append("Birthday: "+birthday.toString()+"<br>");
+		info.append("phone: "+ phone+"<br>");
 		info.append("Address: "+address+"<br>");
 		return info.toString();
 		
 	}
+	
 	
 }

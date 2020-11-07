@@ -21,13 +21,27 @@
         // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
         function checkValue()
         {
-            if(!document.userInfo.id.value){
+            if(document.getElementById("email").value == ""){
                 alert("아이디를 입력하세요.");
                 return false;
             }
             
-            if(!document.userInfo.password.value){
+            if(document.getElementById("sec").value == ""){
                 alert("비밀번호를 입력하세요.");
+                return false;
+            }
+            if(document.getElementById("name").value == ""){
+                alert("이름을 입력하세요.");
+                return false;
+            }
+            
+            if(document.getElementById("phone").value == ""){
+                alert("전화번호를 입력하세요.");
+                return false;
+            }
+            
+            if(document.getElementById("address_detail").value == ""){
+                alert("상세주소를 입력하세요.");
                 return false;
             }
             
@@ -38,117 +52,31 @@
             }
         }
         
-        // 취소 버튼 클릭시 로그인 화면으로 이동
-        function goLoginForm() {
-            location.href="/seedshop/home/index.html";
-        }
+       
     </script>
    <link rel="shortcut icon" href="../home/images/favicon.ico" />
    
    </head>
    <body>
-   
-   <div class="gtco-loader"></div>
-   <div id="page">
-   <nav class="gtco-nav" role="navigation">
-      <div class="gtco-container">
-         <div class="row">
-            <div class="col-xs-2">
-               <div id="gtco-logo"><a href="index.jsp">SeedShop</a></div>
-            </div>
-            <div class="col-xs-10 text-right menu-1">
-               <ul>
-                  <li class="active"><a href="index.jsp">Home</a></li>
-                  <li><a href="About.jsp">About</a></li>
-                  <li class="has-dropdown">
-                     <a>SHOP</a>
-                     <ul class="dropdown">
-                        <li><a href="Seed.jsp">SEED</a></li>
-                        <li><a href="Plant.jsp">PLANT</a></li>
-                     </ul>
-                  </li>
-                  <li class="has-dropdown">
-                     <a>My</a>
-                     <ul class="dropdown">
-                        <li><a href="Orders.jsp">ORDERS</a></li>
-                        <li><a href="Profile.jsp">PROFILE</a></li>
-                     </ul>
-                  </li>
-                  <li class="has-dropdown">
-                     <a href="/seedshop/home/NewFile.jsp">Contact</a>
-                     <ul class="dropdown">
-                        <li><a href="Livechat.jsp">LIVE CHAT</a></li>
-                        <li><a href="Call.jsp">CALL</a></li>
-                     </ul>
-                  </li>
-                  
-                  <!-- 로그인여부에 따라 보이는 항목이 다름 -->
-                  <% if("true".equalsIgnoreCase((String)session.getAttribute("login"))||"true".equalsIgnoreCase((String)session.getAttribute("staff"))||"true".equalsIgnoreCase((String)session.getAttribute("master"))){%>
-                  <li class="has-dropdown">
-                     <a href="/seedshop/home/Logout.jsp" style="color:red;">logout</a>
-                  </li>
-                  <%}else{ %>
-                  <li class="has-dropdown">
-                     <a href="/seedshop/templete/login.jsp" style="color:red;">login</a>
-                  </li>
-                  <%} %>
-                  
-                  <!-- 직원 아이디로 로그인시 보이는 메뉴 -->
-                  <% if("true".equalsIgnoreCase((String)session.getAttribute("staff"))){%>
-                  <li class="has-dropdown">
-                     <a style="color:green;">Manage</a>
-                     <ul class="dropdown">
-                        <li><a href="SeedManageForm.jsp">SEED/PLANT</a></li>
-                        <li><a href="OrdersManagement.jsp">ORDERS</a></li>
-                        <li><a href="CustomerManagement.jsp">CUSTOMERS</a></li>
-                     </ul>
-                  </li>
-                  <%} %>
-                  
-                  
-                  <!-- 마스터 아이디로 로그인시 보이는 메뉴 -->
-                  <% if("true".equalsIgnoreCase((String)session.getAttribute("master"))){%>
-                  <li class="has-dropdown">
-                     <a href="/seedshop/home/NewFile.jsp" style="color:cyan; font-size:20px;"><b>MASTER</b></a>
-                     <ul class="dropdown">
-                        <li><a href="StaffList.jsp" style="color:red;">직원 </a></li>
-                        <li><a href="BestCustomer.jsp" style="color:red;">고객</a></li>
-                        <li><a href="Benefit.jsp" style="color:red;">총 매출</a></li>
-                     </ul>
-                  </li>
-                  <%} %>
-                  
-                  
-               </ul>
-            </div>
-         </div>
-         
-      </div>
-   </nav>
-
-   <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(../home/images/Sunflower_from_Silesia2.jpg); height:100px;">
-      </header>
-   
-<!--@@@@@@@@@@@@@@@@@@@  양식 시작    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->   
-
+  
       
       
 <div id="wrap" style="margin:auto; background-color:white; padding:80px">
         <br><br>
         <div style="text-align:center;"><b><font size="6" color="gray">회원가입</font></b></div>
-        <div style="text-align:center;"><b><font size="2" color="gray">[씨앗상점의 회원이 되어주세요]</font></b></div>     
+        <div style="text-align:center;"><b><font size="2" color="gray">[박사플로리스트]</font></b></div>     
         
         <br><br>
-        <div style="text-align:center;"><b><font size="2" style="color:red;"><b>* 표시 필수입력 사항</b></font></b></div>     
+        <div style="text-align:center"><b><font size="2" style="color:red;"><b>* 표시 필수입력 사항</b></font></b></div>     
 
 
   
-        <form method="post" action="JoinResult.jsp" name="userInfo" onsubmit="return checkValue()">
+        <form method="post" action="doJoin.jsp" name="userInfo" onsubmit="return checkValue()">
             <table style="margin:auto;">
                 <tr>
-                    <td id="title">아이디<font style="color:red;"><b>*</b></font></td>
+                    <td id="title">아이디(이메일)<font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <input type="text" name="id" maxlength="50"  placeholder="10자리 이하">                     
+                        <input type="text" id="email" name="email" maxlength="50"  >                     
                     </td>
                 </tr>
                 
@@ -158,7 +86,7 @@
                 <tr>
                     <td id="title">비밀번호<font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <input type="password" name="password" maxlength="50" placeholder="3~10자리 ">
+                        <input type="password" id="sec" name="sec" maxlength="50" >
                     </td>
                 </tr>
                 
@@ -167,7 +95,7 @@
                 <tr>
                     <td id="title">비밀번호 확인<font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <input type="password" name="passwordcheck" maxlength="50">
+                        <input type="password" name="sce" maxlength="50">
                     </td>
                 </tr>
                 
@@ -176,14 +104,14 @@
                 <tr>
                     <td id="title">이름<font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <input type="text" name="name" maxlength="50">
+                        <input type="text" id="name" name="name" maxlength="50">
                     </td>
                 </tr>
                 
                 <tr style="height:5pt"><td></td></tr>
                 
                  <tr>
-                    <td id="title">생일<font style="color:red;"><b>*</b></font></td>
+                    <td id="title">생일</td>
                     <td>
                         <input type="text" name="birthyyyy" maxlength="4" placeholder="년(4자)" size="6" >
                         <select name="birthmm" style="height:24pt;">
@@ -201,41 +129,62 @@
                             <option value="11" >11</option>
                             <option value="12" >12</option>
                         </select>
-                        <input type="text" name="birthdd" maxlength="2" placeholder="일" size="4" >
+                         <select name="birthdd" style="height:24pt;">
+                            <option value="">일</option>
+                            <option value="01" >1</option>
+                            <option value="02" >2</option>
+                            <option value="03" >3</option>
+                            <option value="04" >4</option>
+                            <option value="05" >5</option>
+                            <option value="06" >6</option>
+                            <option value="07" >7</option>
+                            <option value="08" >8</option>
+                            <option value="09" >9</option>
+                            <option value="10" >10</option>
+                            <option value="11" >11</option>
+                            <option value="12" >12</option>
+                            <option value="13" >13</option>
+                            <option value="14" >14</option>
+                            <option value="15" >15</option>
+                            <option value="16" >16</option>
+                            <option value="17" >17</option>
+                            <option value="18" >18</option>
+                            <option value="19" >19</option>
+                            <option value="20" >20</option>
+                            <option value="21" >21</option>
+                            <option value="22" >22</option>
+                            <option value="23" >23</option>
+                            <option value="24" >24</option>
+                            <option value="25" >25</option>
+                            <option value="26" >26</option>
+                            <option value="27" >27</option>
+                            <option value="28" >28</option>
+                            <option value="29" >29</option>
+                            <option value="30" >30</option>
+                            <option value="31" >31</option>
+                        </select>
                     </td>
                 </tr>   
                 
                 <tr style="height:5pt"><td></td></tr>
                  
                 <tr>
-                    <td id="title">성별<font style="color:red;"><b>*</b></font></td>
+                    <td id="title">성별</td>
                     <td>
-                        <input type="radio" name="sex" value="남" checked>남
-                        <input type="radio" name="sex" value="여" checked>여
+                        <input type="radio" name="gender" value="M" checked>남성
+                        <input type="radio" name="gender" value="W" checked>여성
+                        <input type="radio" name="gender" value="N" checked>무성
                     </td>
                 </tr>
                 
                 <tr style="height:5pt"><td></td></tr>
-                    
-                <tr>
-                    <td id="title">이메일<font style="color:red;"><b>*</b></font></td>
-                    <td>
-                        <input type="text" name="email" maxlength="50">@
-                        <select name="email2">
-                            <option>naver.com</option>
-                            <option>daum.net</option>
-                            <option>gmail.com</option>
-                            <option>nate.com</option>                        
-                        </select>
-                    </td>
-                </tr>
                 
                 <tr style="height:5pt"><td></td></tr>
                     
                 <tr>
                     <td id="title">휴대전화<font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <input type="text" name="phone" />
+                        <input type="text" id="phone" name="phone" />
                     </td>
                 </tr>
                 
@@ -244,24 +193,24 @@
                 <tr>
                     <td id="title">주소<font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <select name="addressmain">
-                           <option>서울특별시</option>
-                            <option>인천광역시</option>
-                            <option>경기도</option>
-                            <option>강원도</option>   
-                            <option>충청남도</option>
-                            <option>충청북도</option>
-                            <option>전라북도</option>  
-                            <option>전라남도</option>
-                            <option>광주광역시</option>
-                            <option>경상남도</option>   
-                            <option>대구광역시</option>
-                            <option>부산광역시</option>   
-                            <option>울산광역시</option>  
-                            <option>경상북도</option>    
-                            <option>세종특별자치시</option>
-                            <option>대전광역시</option>    
-                            <option>제주특별자치도</option>  
+                        <select name="state">
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="부산광역시">부산광역시</option> 
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="울산광역시">울산광역시</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="경기도">경기도</option>
+                            <option value="강원도">강원도</option>   
+                            <option value="충청북도">충청북도</option>
+                            <option value="충청남도">충청남도</option>
+                            <option value="전라북도">전라북도</option>  
+                            <option value="전라남도">전라남도</option>
+                            <option value="경상북도">경상북도</option>    
+                            <option value="경상남도">경상남도</option>   
+                            <option value="세종특벽자치시">세종특별자치시</option>
+                            <option value="제주특별자치도">제주특별자치도</option>  
                         </select>
                     </td>
                 </tr>
@@ -271,7 +220,7 @@
                 <tr>
                    <td id="title">상세주소<font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <input type="text" size="50" name="addresssub"/>
+                        <input type="text" size="50" id="address_detail" name="address_detail"/>
                     </td>
                 </tr>
               
@@ -279,8 +228,14 @@
             <br>
             
             <div style="text-align:center;">
-            <input type="submit" value="가입"/>  
-            <input type="button" value="홈으로" onclick="goLoginForm()">
+            
+            <textarea style="width:750px;height:100px;">
+            	
+            </textarea>
+            <br>
+            
+            <input type="submit" value="동의 및 가입"/>  
+          
             </div>
             
         </form>
@@ -288,12 +243,9 @@
     
     
      
-      
-   <!--@@@@@@@@@@@@@@@@@@@  양식 끝    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->      
-   
     
     
-   </div>
+
 
    <script src="../home/js/jquery.min.js"></script>
    <script src="../home/js/jquery.easing.1.3.js"></script>

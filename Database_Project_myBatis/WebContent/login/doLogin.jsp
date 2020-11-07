@@ -21,9 +21,9 @@
 	HashMap<String, String> parameter = new HashMap<>();
 	parameter.put("email", email);
 	parameter.put("password", password);
-	String stmtURI = "mybatis.repository.mapper.selectCustomerInfoByEmailAndPW";
-
 	
+
+	String stmtURI = "mybatis.repository.mapper.customerMapper.selectCustomerInfoByEmailAndPW";
 	SqlSession sqlSession = AzureMySQLDB.openSession();
 	CustomerInfo customerInfo;
 	try {
@@ -34,7 +34,7 @@
 	
 	
 
-	String redirect = (String)session.getAttribute("session_redirect");
+	String redirect = (String)session.getAttribute("session_redirectURL");
 	if(customerInfo != null){
 		session.setAttribute("session_customerInfo", customerInfo);
 		if( redirect != null){
