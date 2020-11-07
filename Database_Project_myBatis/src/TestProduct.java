@@ -22,7 +22,7 @@ public static void main(String[] args) {
 	product.setImform(imform);
 	product.setText(text);
 	product.setPrice(price);
-
+	//
 
 	SessionRepository a = new SessionRepository();
 	a.insertProduct(product);
