@@ -7,6 +7,7 @@ public class Product {
 	private String imform;
 	private String text;
 	private int variety;
+	private long price;
 	
 	
 	public int getVariety() {
@@ -15,9 +16,6 @@ public class Product {
 	public void setVariety(int variety) {
 		this.variety = variety;
 	}
-	private long price;
-	private long quantity;
-	
 	
 	public long getProductVarietyCode() {
 		return productVarietyCode;
@@ -55,11 +53,6 @@ public class Product {
 	public void setPrice(long price) {
 		this.price = price;
 	}
-	public long getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(long quantity) {
-		this.quantity = quantity;
-	}
+
 
 }

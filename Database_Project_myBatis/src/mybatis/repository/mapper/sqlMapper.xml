@@ -11,8 +11,8 @@
   </select>
   
   <insert id="insertProduct" parameterType="mybatis.model.Product">
-  	INSERT into product(product_variety_code,is_available,name,imform,text,price,quantity)
-  	VALUES (#{variety},#{isAvailable},#{name},#{imform},#{text},#{price},#{quantity})
+  	INSERT into product(product_variety_code,is_available,name,imform,text,price)
+  	VALUES (#{variety},#{isAvailable},#{name},#{imform},#{text},#{price})
   </insert>
   
 </mapper>

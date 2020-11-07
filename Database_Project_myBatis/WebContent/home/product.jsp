@@ -100,7 +100,8 @@
 
 <br><br><br>
 
-<form action="productInsert.jsp">
+<section id="uploadFormArea">
+<form action="productUploadInsert.jsp" method="post" enctype="multipart/form-data">
 
 <table border="1" width="700" >
 
@@ -120,7 +121,7 @@
  
  <tr>
   <td>상품명</td>
-  <td align="left"><input type="text" name="name" size="30"></td>
+  <td align="left"><input type="text" name="name" id="name" size="30"></td>
  </tr>
  
  <tr>
@@ -128,10 +129,6 @@
   <td align="left"><input type="text" name="price" size="10">원</td>
  </tr>
  
- <tr>
-  <td>수량</td>
-  <td align="left"><input type="text" name="quantity" size="10">개</td>
- </tr>
  
 <tr>
   <td width="150">
@@ -172,7 +169,7 @@
 </table>
 </form>
 
-
+</section>
 
 
 <!--@@@@@@@@@@@@@@@@@@@  양식 끝    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->		     
