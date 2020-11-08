@@ -102,7 +102,7 @@
 
 <form action="productInsert.jsp">
 
-<table border="1" width="700" >
+<table border="1" style="width=700" >
 
  <tr>
   <td width="150">

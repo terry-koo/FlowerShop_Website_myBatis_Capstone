@@ -10,56 +10,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/modernizr-2.6.2.min.js"></script>
+</head>
+
+
 	
-	<!-- 아이콘 생성 -->
-	<link rel="shortcut icon" href="images/favicon.ico" />
-	
-	</head>
-	<body style="height:100%">
-		
-	<div class="gtco-loader"></div>
-	
-	
-	<nav class="gtco-nav" role="navigation">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-xs-2">
-					<div id="gtco-logo"><a href="index.jsp">박사플로리스트</a></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.jsp">홈으로</a></li>
-						<li><a href="About.jsp">공지사항</a></li>
-						<li class="has-dropdown">
-							<a>구매하기</a>
-							<ul class="dropdown">
-								<li><a href="Seed.jsp">꽃</a></li>
-								<li><a href="Plant.jsp">정기 배송</a></li>
-							</ul>
-						</li>
-						<li><a href="index.jsp">장바구니</a></li>
-						<li class="has-dropdown">
-							<a href="/seedshop/home/NewFile.jsp">내 정보</a>
-							<ul class="dropdown">
-								<li><a href="Livechat.jsp">주문내역</a></li>
-								<li><a href="Call.jsp">프로필</a></li>
-								<li><a href="Call.jsp">쿠폰</a></li>
-							</ul>
-						</li>
 <%-- 						
 						<!-- 로그인여부에 따라 보이는 항목이 다름 -->
 						<% if("true".equalsIgnoreCase((String)session.getAttribute("login"))||"true".equalsIgnoreCase((String)session.getAttribute("staff"))||"true".equalsIgnoreCase((String)session.getAttribute("master"))){%>
@@ -98,21 +52,16 @@
 						<%} %>
 						
 						 --%>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
 
+<body>
 	<header id="gtco-header" class="gtco-cover" role="banner" style="height:100%; background-image:url(images/tulips-2068692_1920.jpg);">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-center">
 					<div class="display-t">
-					
-					<% if("true".equalsIgnoreCase((String)session.getAttribute("login"))){%>
+					<!-- 
+					<%-- if("true".equalsIgnoreCase((String)session.getAttribute("login"))){%>
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>"<%= session.getAttribute("name") %>"님 환영합니다!</h1>
 							<h2 style="margin:auto; color:white; background-color: rgba( 0, 0, 0, 0.5 ); width:330px;">[ &nbsp온라인에서 &nbsp 편하게  &nbsp주문하세요 &nbsp]</h2>
@@ -141,35 +90,19 @@
 								</p>
 							</div>		
 							
-					<%}else{ %>
+					<%}--%>-->
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1 >박사플로리스트 꽃꽃이</h1>
 								<h2 style="margin:auto; color:white; background-color: rgba( 0, 0, 0, 0.5 ); width:280px;">[ 문의 : 055-746-2606 ]</h2>
 								<br>
-							<p>
-								<a href="/seedshop/templete/login.jsp" class="btn btn-primary btn-lg">로그인</a> 
-								<a href="/seedshop/home/JoinForm.jsp" class="btn btn-white btn-outline btn-lg">회원가입</a>
-							</p>
 						</div>
-					<% } %>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 	
-	
-	
-	
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.countTo.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<script src="js/main.js"></script>
+
 
 	</body>
 </html>

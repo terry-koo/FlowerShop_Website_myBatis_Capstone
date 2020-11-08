@@ -3,31 +3,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>로그인</title>
+	<meta charset="UTF-8">
+	<title>로그인</title>
+	<style>
+		input{
+			width:100%;
+		}
+	</style>
 </head>
 
 <link rel="stylesheet" href="login.css">
 <link rel="stylesheet" href="loginCommon.css">
 
+
 <body id="bodySet">
 
 <%
-	if(request.getParameter("loginFailed") != null){
+
+	String session_message = (String) session.getAttribute("session_message");
+	session.removeAttribute("session_message");
+
+	if(session_message == "loginFailed"){
 		
 %>
-<div id="loginFailedBox">
+<div id="topMessageBox">
 	<h3 style="margin-top:0px;">로그인 실패</h3>
 </div>
 <%
 	}
 %>
-
+<%
+	if(session_message == "joinFailed"){
+		
+%>
+<div id="topMessageBox">
+	<h3 style="margin-top:0px;">가입 실패</h3>
+</div>
+<%
+	}
+%>
+<%
+	if(session_message == "joinSuccess"){
+		
+%>
+<div id="topMessageBox" style="background-color:#3aff3a;">
+	<h3 style="margin-top:0px;">환영합니다. 가입 성공!</h3>
+</div>
+<%
+	}
+%>
 
 <div id="loginBox">
 <form action="doLogin.jsp" method="post">
 
-  <div class="container">
+  <div class="container" style="width:100%">
     <label for="uname"><b>이메일</b></label>
     <input type="text" placeholder="이메일" name="email" required>
 
@@ -35,22 +64,25 @@
     <input type="password" placeholder="비밀번호" name="psw" required>
 
     <button type="submit">로그인</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> 자동로그인
-    </label>
   </div>
-
-
+<span class="psw">
+	<a href="joinService.jsp">회원가입</a>
+	/
+	<a href="#">비밀번호 찾기</a>
+</span>
 <br>
-	
+<hr>
 <a id="custom-login-btn" href="javascript:loginWithKakao()">
   <img 
   	class="formElements"
     src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
     width="100%"
   />
-</a><br>
-    <span class="psw"><a href="#">비밀번호 찾기</a></span>
+</a>
+<br>
+
+
+    
 	
 </form>
 

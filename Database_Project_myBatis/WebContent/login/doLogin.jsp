@@ -25,10 +25,15 @@
 
 	String stmtURI = "mybatis.repository.mapper.customerMapper.selectCustomerInfoByEmailAndPW";
 	SqlSession sqlSession = AzureMySQLDB.openSession();
-	CustomerInfo customerInfo;
+	CustomerInfo customerInfo = null;
 	try {
 		customerInfo = sqlSession.selectOne(stmtURI, parameter);
-	}finally{
+	}
+	catch(Exception e){
+		session.setAttribute("session_message", "loginFailed");
+		response.sendRedirect("login.jsp");
+	}
+	finally{
 		sqlSession.close();
 	}
 	
@@ -45,7 +50,8 @@
 		}
 	}
 	else{
-		response.sendRedirect("login.jsp?loginFailed=true");
+		session.setAttribute("session_message", "loginFailed");
+		response.sendRedirect("login.jsp");
 	}
 
 %>	

@@ -59,7 +59,7 @@
    </head>
    <body>
   
-      
+<%request.setCharacterEncoding("UTF-8");%>
       
 <div id="wrap" style="margin:auto; background-color:white; padding:80px">
         <br><br>

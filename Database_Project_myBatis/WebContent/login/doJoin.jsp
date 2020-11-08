@@ -3,7 +3,8 @@
 <%@ page import="
 	mybatis.repository.session.AzureMySQLDB,
 	org.apache.ibatis.session.SqlSession,
-	java.util.HashMap
+	java.util.HashMap,
+	project.util.NowAsHashCode
 " %>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,7 @@
 <body>
 
 <% 
+request.setCharacterEncoding("UTF-8");
 String strBirthday = request.getParameter("birthyyyy");
 strBirthday += "-"+request.getParameter("birthmm");
 strBirthday += "-"+request.getParameter("birthdd");
@@ -23,7 +25,7 @@ address += " "+request.getParameter("address_detail");
 
 	HashMap<String, String> newUserInfoMap = new HashMap<>();
 
-	newUserInfoMap.put("customer_id","temp33");
+	newUserInfoMap.put("customer_id",NowAsHashCode.toString("cb"));
 	newUserInfoMap.put("authority_code", "4");
 	newUserInfoMap.put("password", request.getParameter("sec"));
 	newUserInfoMap.put("name", request.getParameter("name"));
@@ -45,10 +47,24 @@ address += " "+request.getParameter("address_detail");
 			sqlSession.commit();
 			out.println(result1*result2);
 		}
+		else{
+			session.setAttribute("session_message", "joinFailed");
+			response.sendRedirect("login.jsp");
+		}
+	}
+	catch(Exception e){
+		session.setAttribute("session_message", "joinFailed");
+		response.sendRedirect("login.jsp");
 	}
 	finally{
 		sqlSession.close();
 	}
+	
+	
+	session.setAttribute("session_message", "joinSuccess");
+	response.sendRedirect("login.jsp");
+	
+	
 %>
 
 </body>
