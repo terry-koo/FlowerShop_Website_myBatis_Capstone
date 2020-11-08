@@ -7,8 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import mybatis.model.CustomerInfo;
-import mybatis.model.test;
-import mybatis.model.Product;
+import mybatis.model.*;
 
 
 
@@ -61,6 +60,33 @@ public class SessionRepository {
 			sqlSession.close();
 		}
 	}
-	//
-	//
+	
+	public Integer insertArticle(Article article) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.insertArticle";
+			int result = sqlSession.insert(statement,article);
+			if(result>0) {
+				sqlSession.commit();
+			}
+			return result;
+		}finally {
+			sqlSession.close();
+		}
+	}
+	
+	public Integer insertPicture(Picture picture) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.insertPicture";
+			int result = sqlSession.insert(statement,picture);
+			if(result>0) {
+				sqlSession.commit();
+			}
+			return result;
+		}finally {
+			sqlSession.close();
+		}
+	}
+	
 }

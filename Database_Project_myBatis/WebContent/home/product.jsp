@@ -100,7 +100,8 @@
 
 <br><br><br>
 
-<form action="productInsert.jsp">
+<section id="uploadFormArea">
+<form action="productUploadInsert.jsp" method="post" enctype="multipart/form-data">
 
 <table border="1" style="width=700" >
 
@@ -109,7 +110,7 @@
   타입
   </td>
   <td width="350" align="left">
-  <select name="variety">
+  <select name="productVarietyCode">
    <option value="1">화환</option>
    <option value="2">바구니</option>
    <option value="3">압화</option>
@@ -119,8 +120,8 @@
  </tr>
  
  <tr>
-  <td>상품명</td>
-  <td align="left"><input type="text" name="name" size="30"></td>
+  <td>제목 및 상품명</td>
+  <td align="left"><input type="text" name="title" size="30"></td>
  </tr>
  
  <tr>
@@ -128,10 +129,6 @@
   <td align="left"><input type="text" name="price" size="10">원</td>
  </tr>
  
- <tr>
-  <td>수량</td>
-  <td align="left"><input type="text" name="quantity" size="10">개</td>
- </tr>
  
 <tr>
   <td width="150">
@@ -150,17 +147,10 @@
   <td align="left"><input type="file" name= "img"></td>
  </tr>
  
- <tr>
-  <td>상품 설명(간략하게)</td>
-  <td align="left" >
-  <textarea name="imform" style="width:600px; height:100px; resize:none;"></textarea>
-  </td>
- </tr>
- 
   <tr>
   <td>게시글 내용</td>
   <td align="left" >
-  <textarea name="text" style="width:600px; height:200px; resize:none;"></textarea>
+  <textarea name="content" style="width:600px; height:200px; resize:none;"></textarea>
   </td>
  </tr>
  
@@ -172,7 +162,7 @@
 </table>
 </form>
 
-
+</section>
 
 
 <!--@@@@@@@@@@@@@@@@@@@  양식 끝    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->		     
