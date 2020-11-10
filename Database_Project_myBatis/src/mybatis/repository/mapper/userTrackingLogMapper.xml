@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper.userTrackingLogMapper">
+
+<insert id="insertUserTrackingLog" parameterType="java.util.HashMap">
+  	INSERT INTO user_tracking_log(customer_id, visit_date , visit_page)
+  	VALUES (#{customer_id}, now(), #{visit_page});
+</insert>
+
+  
+    
+</mapper>

@@ -1,6 +1,11 @@
+<%@page import="java.io.Console"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="
+	mybatis.repository.session.AzureMySQLDB,
+	org.apache.ibatis.session.SqlSession,
+	java.util.HashMap,
+	java.util.Date,
 	mybatis.model.CustomerInfo
 "%>
 <!DOCTYPE html>
@@ -8,7 +13,8 @@
 <%	
 	String url = request.getContextPath();
 	CustomerInfo customerInfoHeader = (CustomerInfo) session.getAttribute("session_customerInfo");
-	
+	String requestedURL = request.getRequestURL().toString();
+	Date nowDate = new Date();
 	request.setCharacterEncoding("UTF-8");
 	
 %>
@@ -61,6 +67,8 @@
 						<li class="has-dropdown">
 							<a href="#">내 정보</a>
 							<ul class="dropdown">
+								<li><b><%=customerInfoHeader.getName() %></b> 님!</li>
+								<hr>
 								<li><a href="#">주문내역</a></li>
 								<li><a href="#">프로필</a></li>
 								<li><a href="#">장바구니</a></li>
@@ -84,6 +92,32 @@
 		</div>
 </nav>
 
-
+<%
+	String customer_id = "adminID";
+	if(customerInfoHeader != null){
+		customer_id = customerInfoHeader.getCustomer_id();
+	}
+	
+	HashMap<String, String> trackingInfoMap = new HashMap<>();
+	trackingInfoMap.put("customer_id", customer_id);
+	trackingInfoMap.put("visit_page", requestedURL);
+	
+	
+	String stmtURI_user_tracking_log = "mybatis.repository.mapper.userTrackingLogMapper.insertUserTrackingLog";
+	SqlSession sqlSession = AzureMySQLDB.openSession();
+	try{
+		int recorded = sqlSession.insert(stmtURI_user_tracking_log, trackingInfoMap);
+		if(recorded>0){
+			sqlSession.commit();
+		}
+	}
+	catch(Exception e){
+		out.println(e.toString());
+	}
+	finally{
+		sqlSession.close();
+	}
+	
+%>
 </html>
-<!--@@@@@@@@@@@@@@@@@@@  양식 시작    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->	
+<!--====================================Header.jsp 끝========================================-->	

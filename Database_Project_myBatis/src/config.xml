@@ -18,5 +18,6 @@
     <mapper resource="mybatis/repository/mapper/sqlMapper.xml"/>
     <mapper resource="mybatis/repository/mapper/customerMapper.xml"/>
 	<mapper resource="mybatis/repository/mapper/pictureMapper.xml"/>
+	<mapper resource="mybatis/repository/mapper/userTrackingLogMapper.xml"/>
   </mappers>
 </configuration>

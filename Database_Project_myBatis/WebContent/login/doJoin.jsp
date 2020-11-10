@@ -15,7 +15,6 @@
 <body>
 
 <% 
-request.setCharacterEncoding("UTF-8");
 String strBirthday = request.getParameter("birthyyyy");
 strBirthday += "-"+request.getParameter("birthmm");
 strBirthday += "-"+request.getParameter("birthdd");
