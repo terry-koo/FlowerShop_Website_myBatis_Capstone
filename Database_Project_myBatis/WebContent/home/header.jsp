@@ -8,6 +8,9 @@
 <%	
 	String url = request.getContextPath();
 	CustomerInfo customerInfoHeader = (CustomerInfo) session.getAttribute("session_customerInfo");
+	
+	request.setCharacterEncoding("UTF-8");
+	
 %>
 <head>
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,400italic,700' rel='stylesheet' type='text/css'>

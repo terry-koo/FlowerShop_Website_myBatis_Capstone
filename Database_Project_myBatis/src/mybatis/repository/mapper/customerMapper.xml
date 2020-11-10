@@ -41,4 +41,7 @@
   	VALUES (#{customer_id}, #{birthday}, #{gender}, #{phone}, #{address});
   </insert>
   
+
+ 
+  
 </mapper>

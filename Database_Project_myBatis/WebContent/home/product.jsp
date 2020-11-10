@@ -2,106 +2,23 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
 	<title>Jinju_Flower</title>
 
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	
-	<link rel="shortcut icon" href="images/favicon.ico" />
-	
-		<style>
-		  /* 표 기본 스타일 */
-		  table {
-		    width: 100%;
-		    border-top: 1px solid #444444;
-		    border-collapse: collapse;
-		    color:black;
-		  }
-		  th, td {
-		    border-bottom: 1px solid #444444;
-		    padding: 10px;
-		  }
-		  /* 바탕색 설정하기 편하게 설정 */
-		  html, body { height:100%; overflow:hidden }
+</head>
 
-		</style>
-		
-	</head>
-	
-	<body style="height:100%;">
-	
-	<div class="gtco-loader"></div>
-	<div id="page" style="background-color:#C7DBD0; height:100%;">
-	<nav class="gtco-nav" role="navigation">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-xs-2">
-					<div id="gtco-logo"><a href="index.jsp">SeedShop</a></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.jsp">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li class="has-dropdown">
-							<a href="services.html">SHOP</a>
-							<ul class="dropdown">
-								<li><a href="#">SEED</a></li>
-								<li><a href="#">PLANT</a></li>
-							</ul>
-						</li>
-						<li class="has-dropdown">
-							<a href="#">My</a>
-							<ul class="dropdown">
-								<li><a href="#">ORDERS</a></li>
-								<li><a href="#">PROFILE</a></li>
-							</ul>
-						</li>
-						<li class="has-dropdown">
-							<a href="/seedshop/home/NewFile.jsp">Contact</a>
-							<ul class="dropdown">
-								<li><a href="#">LIVE CHAT</a></li>
-								<li><a href="#">CALL</a></li>
-							</ul>
-						</li>
-					
-						<% if("true".equalsIgnoreCase((String)session.getAttribute("login"))){%>
-						<li class="has-dropdown">
-							<a href="/seedshop/home/Logout.jsp" style="color:red;">logout</a>
-						</li>
-						<%}else{ %>
-						<li class="has-dropdown">
-							<a href="/seedshop/templete/login.jsp" style="color:red;">login</a>
-						</li>
-						<%} %>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
 
-	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/Sunflower_from_Silesia2.jpg); height:105px;">
-		</header>
+<body style="height:100%;">
+
+
 	
-	
-		
+
 <div id="wrap" style="margin:auto;  padding:80px; height:100%;">
-
-<!--@@@@@@@@@@@@@@@@@@@  양식 시작    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->	
 
 <br><br><br>
 
 <section id="uploadFormArea">
-<form action="productUploadInsert.jsp" method="post" enctype="multipart/form-data">
+<form action="productUploadInsert.jsp" method="post">
 
 <table border="1" style="width=700" >
 
@@ -126,7 +43,7 @@
  
  <tr>
   <td>가격</td>
-  <td align="left"><input type="text" name="price" size="10">원</td>
+  <td align="left"><input type="number" name="price" size="10">원</td>
  </tr>
  
  
@@ -142,11 +59,31 @@
   </td>
  </tr>
  
- <tr>
+ <tr><!-- 이미지 업로드 부분 시작-->
   <td>이미지</td>
-  <td align="left"><input type="file" name= "img"></td>
+  <td align="left">
+  <div class="container">
+      <!-- Input Markup -->
+      <input type="file" id="default-file" hidden="hidden" />
+
+      <!-- Button Markup -->
+      <button id="custom-btn" type="button" class="btn">
+        CHOOSE FILE
+      </button>
+
+      <!-- Choose File TEXT Markup -->
+      <span id="custom-space"> <strong> No</strong> File, Selected!😭</span>
+  </div>
+   <div class="preview_holder">
+      <div id="preview">
+        <img src="" id="preview_img" class="preview_img"  style="width:100px;height:100px;">
+        <span id="preview_text" class="preview_text">Image Preview</span>
+      </div>
+    </div>
+    <input type="text" id="picture" name="pictureString" style="visibility:hidden;">
+  </td>
  </tr>
- 
+ <!-- 이미지 업로드 부분 끝 -->
   <tr>
   <td>게시글 내용</td>
   <td align="left" >
@@ -163,20 +100,8 @@
 </form>
 
 </section>
-
-
-<!--@@@@@@@@@@@@@@@@@@@  양식 끝    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->		     
+	<script src="js/imageScript.js"></script> <!-- 사진 불러오는 js -->
 </div>
-	</div>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.countTo.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<script src="js/main.js"></script>
 
-	</body>
+</body>
 </html>
