@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper.pictureMapper">
+
+<insert id="insertPicture" parameterType="java.util.HashMap">
+  	INSERT INTO picture(picture_id, article_id , picture)
+  	VALUES (#{picture_id}, #{article_id}, #{picture});
+  </insert>
+  <select id="selectPicture" parameterType="java.util.HashMap" resultType="String">
+    SELECT 
+    	picture
+    FROM picture
+    WHERE id = #{article_id} 
+  </select>
+  
+    
+</mapper>
