@@ -67,26 +67,7 @@
                 <tr>
                     <td id="title"><font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <input type="text" id="email" name="email" maxlength="50" placeholder="Email" >                     
-                    </td>
-                </tr>
-                
-                <tr style="height:5pt"><td></td></tr>
-                
-                        
-                <tr>
-                    <td id="title"><font style="color:red;"><b>*</b></font></td>
-                    <td>
-                        <input type="password" id="sec" name="sec" maxlength="50"  placeholder="비밀번호">
-                    </td>
-                </tr>
-                
-               <tr style="height:5pt"><td></td></tr>
-                
-                <tr>
-                    <td id="title"><font style="color:red;"><b>*</b></font></td>
-                    <td>
-                        <input type="password" id="secCheck" name="sce" maxlength="50" placeholder="비밀번호 확인">
+                        <input type="text" id="email" name="email" maxlength="50" placeholder="Email" readonly>                     
                     </td>
                 </tr>
                 
@@ -228,7 +209,7 @@
             <input type="submit" value="동의 및 가입"/>  
           
             </div>
-            
+            <input type="text" id="kakaoID" name="kakaoID" style="visibility:hidden" value="nokakao" />
         </form>
         </div>
     </div>
@@ -237,6 +218,47 @@
      
     
 
+<p id="token-result"></p>
+<p id="user-info"></p>
+<img id="ph" src="" />
 
-   </body>
+</body>
+
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript">
+
+Kakao.init('939c6aeb4a224596f6dd2be2e061a4c2');
+console.log("Kakao init : "+Kakao.isInitialized());
+
+Kakao.Auth.login({
+	success:function(authObj){
+		  Kakao.API.request({
+			  url:'/v2/user/me',
+			  success:function(res){
+				  /*
+				  console.log(res);
+				  var id = res.id+"<br>";
+				  var email = res.kakao_account.email+"<br>";
+				  var name = res.properties.nickname+"<br>";
+				  var gender = res.kakao_account.gender+"<br>";
+				  var age_range = res.kakao_account.age_range+"<br>"
+				  var birthday = res.kakao_account.birthday+"<br>"
+				  var token = "token= "+authObj.access_token+"<br>";
+				  var token_expire = "expires_in= "+authObj.expires_in+"<br>";
+				  var html = id+email+name+gender+age_range+birthday+token+token_expire;
+				  document.getElementById('user-info').innerHTML = html;
+				  document.getElementById('ph').src = res.properties.profile_image;
+				  */
+				  document.getElementById('kakaoID').value = res.id;
+				  document.getElementById('email').value = res.kakao_account.email;
+				  document.getElementById('name').value = res.properties.nickname;
+
+			  }
+			  
+		  })
+	},
+	scope:"account_email, age_range, gender, birthday,"
+})
+</script>
 </html>

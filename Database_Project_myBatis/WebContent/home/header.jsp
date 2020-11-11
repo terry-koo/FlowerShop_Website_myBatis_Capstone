@@ -91,29 +91,29 @@
 </nav>
 
 <%
-	String customer_id = "adminID";
+	String customer_id_HEAD = "adminID";
 	if(customerInfoHeader != null){
-		customer_id = customerInfoHeader.getCustomer_id();
+		customer_id_HEAD = customerInfoHeader.getCustomer_id();
 	}
 	
 	HashMap<String, String> trackingInfoMap = new HashMap<>();
-	trackingInfoMap.put("customer_id", customer_id);
+	trackingInfoMap.put("customer_id", customer_id_HEAD);
 	trackingInfoMap.put("visit_page", requestedURL);
 	
 	
 	String stmtURI_user_tracking_log = "mybatis.repository.mapper.userTrackingLogMapper.insertUserTrackingLog";
-	SqlSession sqlSession = AzureMySQLDB.openSession();
+	SqlSession sqlSessionHeader = AzureMySQLDB.openSession();
 	try{
-		int recorded = sqlSession.insert(stmtURI_user_tracking_log, trackingInfoMap);
+		int recorded = sqlSessionHeader.insert(stmtURI_user_tracking_log, trackingInfoMap);
 		if(recorded>0){
-			sqlSession.commit();
+			sqlSessionHeader.commit();
 		}
 	}
 	catch(Exception e){
-		out.println(e.toString());
+		
 	}
 	finally{
-		sqlSession.close();
+		sqlSessionHeader.close();
 	}
 	
 %>

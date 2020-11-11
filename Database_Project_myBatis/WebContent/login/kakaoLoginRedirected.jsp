@@ -28,7 +28,7 @@ Kakao.Auth.login({
 	success:function(authObj){
 		  Kakao.API.request({
 			  url:'/v2/user/me',
-			  success:function(res){
+			  success:function(res){/*
 				  console.log(res);
 				  var id = res.id+"<br>";
 				  var email = res.kakao_account.email+"<br>";
@@ -38,7 +38,7 @@ Kakao.Auth.login({
 				  var birthday = res.kakao_account.birthday+"<br>"
 				  var token = "token= "+authObj.access_token+"<br>";
 				  var token_expire = "expires_in= "+authObj.expires_in+"<br>";
-				  var html = id+email+name+gender+age_range+birthday+token+token_expire;
+				  var html = id+email+name+gender+age_range+birthday+token+token_expire;*/
 				  //document.getElementById('user-info').innerHTML = html;
 				  //document.getElementById('ph').src = res.properties.profile_image;
 				  var id = res.id;

@@ -34,6 +34,7 @@
 	
 	
 	String redirect = (String)session.getAttribute("session_redirectURL");
+	session.removeAttribute("session_redirectURL");
 	if(customerInfo != null){
 		session.setAttribute("session_customerInfo", customerInfo);
 		if( redirect != null){
@@ -44,7 +45,7 @@
 		}
 	}
 	else{
-		response.sendRedirect("login.jsp?loginFailed=true");
+		response.sendRedirect("kakaoJoinService.jsp");
 	}
 %>
 

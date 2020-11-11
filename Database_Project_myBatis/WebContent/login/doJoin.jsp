@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="
-	mybatis.repository.session.AzureMySQLDB,
-	org.apache.ibatis.session.SqlSession,
-	java.util.HashMap,
 	project.util.NowAsHashCode
 " %>
 <!DOCTYPE html>
@@ -20,11 +17,17 @@ strBirthday += "-"+request.getParameter("birthmm");
 strBirthday += "-"+request.getParameter("birthdd");
 String address = request.getParameter("address");
 address += " "+request.getParameter("address_detail");
-
+String customer_id = NowAsHashCode.toString("cb");
+if(request.getParameter("kakaoID")!= null){
+	customer_id = request.getParameter("kakaoID");
+}
+else{
+	session.setAttribute("session_message", "joinFailed");
+}
 
 	HashMap<String, String> newUserInfoMap = new HashMap<>();
-
-	newUserInfoMap.put("customer_id",NowAsHashCode.toString("cb"));
+	
+	newUserInfoMap.put("customer_id",customer_id);
 	newUserInfoMap.put("authority_code", "4");
 	newUserInfoMap.put("password", request.getParameter("sec"));
 	newUserInfoMap.put("name", request.getParameter("name"));
