@@ -5,7 +5,6 @@
 	mybatis.repository.session.AzureMySQLDB,
 	org.apache.ibatis.session.SqlSession,
 	java.util.HashMap,
-	java.util.Date,
 	mybatis.model.CustomerInfo
 "%>
 <!DOCTYPE html>
@@ -14,7 +13,6 @@
 	String url = request.getContextPath();
 	CustomerInfo customerInfoHeader = (CustomerInfo) session.getAttribute("session_customerInfo");
 	String requestedURL = request.getRequestURL().toString();
-	Date nowDate = new Date();
 	request.setCharacterEncoding("UTF-8");
 	
 %>
