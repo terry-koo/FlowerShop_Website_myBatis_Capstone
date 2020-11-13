@@ -7,7 +7,11 @@ public class Test {
 	public static void main(String[] args) {
 
 		List<VProductArticlePictureLatest> list =  VProductManager.getList();
-		System.out.println(list.get(0).getArticle_id());
+		int size = list.size();
+		for (int i = 0; i < size; i++) {
+			System.out.println(list.get(i).getPicture());
+			System.out.println(i);
+		}
 		
 	}
 }

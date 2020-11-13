@@ -13,14 +13,29 @@ import mybatis.model.Article;
 import mybatis.model.CustomerInfo;
 import mybatis.model.Picture;
 import mybatis.model.Product;
-import mybatis.model.VProductArticlePictureLatest;
 import mybatis.model.test;
 
 
 
 public class SessionRepository {
+	private static SqlSessionFactory sqlSessionFactory;
 	
-	private SqlSessionFactory getSqlSessionFactory() {
+	static {
+		reNewSqlSessionFactory();
+	}
+	
+	public static SqlSession openSession() {
+		if(sqlSessionFactory != null) {
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			return sqlSession;
+		}
+		else {
+			reNewSqlSessionFactory();
+			return openSession();
+		}
+	}
+	
+	public static void reNewSqlSessionFactory() {
 		String resource = "config.xml";
 		InputStream inputStream;
 		try {
@@ -29,10 +44,11 @@ public class SessionRepository {
 			throw new IllegalArgumentException(e);
 		}
 		
-		return new SqlSessionFactoryBuilder().build(inputStream);
+		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	}
 	
-	public static SqlSessionFactory getSqlSessionFactoryStatic() {
+	//싱글턴패턴 구현으로 인한 삭제예정
+	private SqlSessionFactory getSqlSessionFactory() {
 		String resource = "config.xml";
 		InputStream inputStream;
 		try {
@@ -108,18 +124,9 @@ public class SessionRepository {
 		}
 	}
 	
-	public List<Object> selectVProductArticlePictureLatest() {
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		try {
-			String statement = "mybatis.repository.mapper.selectPAP";
-			return (List<Object>)sqlSession.selectList(statement);
-		}finally{
-			sqlSession.close();
-		}
-	}
 	
 	public static List<Object> selectVProductArticlePictureLatestStatic() {
-		SqlSession sqlSession = getSqlSessionFactoryStatic().openSession();
+		SqlSession sqlSession = SessionRepository.openSession();
 		try {
 			String statement = "mybatis.repository.mapper.selectPAP";
 			return (List<Object>)sqlSession.selectList(statement);
