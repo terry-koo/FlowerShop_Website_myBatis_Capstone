@@ -3,7 +3,7 @@ package mybatis.model;
 public class Picture {
 	private String pictureId;
 	private String articleId;
-	private String picturePath;
+	private String picture;
 	
 	
 	public String getPictureId() {
@@ -18,10 +18,10 @@ public class Picture {
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
 	}
-	public String getPicturePath() {
-		return picturePath;
+	public String getPicture() {
+		return picture;
 	}
-	public void setPicturePath(String picturePath) {
-		this.picturePath = picturePath;
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 }

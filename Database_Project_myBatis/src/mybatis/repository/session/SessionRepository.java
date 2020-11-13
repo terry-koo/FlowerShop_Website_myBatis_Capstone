@@ -2,12 +2,19 @@ package mybatis.repository.session;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import mybatis.model.Article;
 import mybatis.model.CustomerInfo;
-import mybatis.model.*;
+import mybatis.model.Picture;
+import mybatis.model.Product;
+import mybatis.model.VProductArticlePictureLatest;
+import mybatis.model.test;
 
 
 
@@ -85,6 +92,16 @@ public class SessionRepository {
 			}
 			return result;
 		}finally {
+			sqlSession.close();
+		}
+	}
+	
+	public List<Object> selectVProductArticlePictureLatest() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.selectPAP";
+			return (List<Object>)sqlSession.selectList(statement);
+		}finally{
 			sqlSession.close();
 		}
 	}
