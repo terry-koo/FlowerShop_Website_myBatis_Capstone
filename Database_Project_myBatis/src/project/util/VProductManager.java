@@ -1,24 +1,22 @@
 package project.util;
-
 import java.util.ArrayList;
 import java.util.List;
-
+import mybatis.model.VProductArticlePictureLatest;
 import mybatis.repository.session.SessionRepository;
 
 public class VProductManager {
-	private static ArrayList<VProduct> productArray = null;
-	private static SessionRepository sessionRepository = new SessionRepository(); 
-	private static List<Object> selectListProduct = sessionRepository.selectVProductArticlePictureLatest();
+	private static ArrayList<VProductArticlePictureLatest> productArray = null;
+	private static List<Object> selectListProduct = SessionRepository.selectVProductArticlePictureLatestStatic();
 	private static int size = selectListProduct.size();
 	
 	private VProductManager() {};
 	
-	public static ArrayList<VProduct> getInstance() {
+	public static ArrayList<VProductArticlePictureLatest> getList(){
 		
 		if(productArray == null) {
 			productArray = new ArrayList<>();
 			for(int i=0; i<size; i++) {
-				productArray.add(new VProduct(i));
+				productArray.add((VProductArticlePictureLatest) selectListProduct.get(i));
 			}			
 		}
 		return productArray;

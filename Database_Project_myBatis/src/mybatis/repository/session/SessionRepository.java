@@ -32,6 +32,18 @@ public class SessionRepository {
 		return new SqlSessionFactoryBuilder().build(inputStream);
 	}
 	
+	public static SqlSessionFactory getSqlSessionFactoryStatic() {
+		String resource = "config.xml";
+		InputStream inputStream;
+		try {
+			inputStream = Resources.getResourceAsStream(resource);
+		}catch(Exception e) {
+			throw new IllegalArgumentException(e);
+		}
+		
+		return new SqlSessionFactoryBuilder().build(inputStream);
+	}
+	
 	
 	public test selectIdNameByID(long id) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -98,6 +110,16 @@ public class SessionRepository {
 	
 	public List<Object> selectVProductArticlePictureLatest() {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.selectPAP";
+			return (List<Object>)sqlSession.selectList(statement);
+		}finally{
+			sqlSession.close();
+		}
+	}
+	
+	public static List<Object> selectVProductArticlePictureLatestStatic() {
+		SqlSession sqlSession = getSqlSessionFactoryStatic().openSession();
 		try {
 			String statement = "mybatis.repository.mapper.selectPAP";
 			return (List<Object>)sqlSession.selectList(statement);

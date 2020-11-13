@@ -1,19 +1,13 @@
 
-import java.util.List;
+import java.util.ArrayList;
+
 import mybatis.model.VProductArticlePictureLatest;
-import mybatis.repository.session.SessionRepository;
+import project.util.VProductManager;
 
 public class Test {
 	public static void main(String[] args) {
 
-		  
-		  SessionRepository a = new SessionRepository(); 
-		  List<Object> t = a.selectVProductArticlePictureLatest();
-		  
-
-		  int size = t.size();
-		  for(int i=0; i<size; i++) {
-		  System.out.println(i+1 +" :: " +  ((VProductArticlePictureLatest) t.get(i)).getArticle_id());
-		  }
+		ArrayList<VProductArticlePictureLatest> list =  VProductManager.getList();
+		System.out.println(list.get(0).getArticle_id());
 	}
 }
