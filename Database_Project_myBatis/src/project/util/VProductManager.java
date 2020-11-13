@@ -11,7 +11,7 @@ public class VProductManager {
 	
 	private VProductManager() {};
 	
-	public static ArrayList<VProductArticlePictureLatest> getList(){
+	public static List<VProductArticlePictureLatest> getList(){
 		
 		if(productArray == null) {
 			productArray = new ArrayList<>();
