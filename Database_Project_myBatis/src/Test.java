@@ -9,7 +9,7 @@ public class Test {
 		List<VProductArticlePictureLatest> list =  VProductManager.getList();
 		int size = list.size();
 		for (int i = 0; i < size; i++) {
-			System.out.println(list.get(i).getPicture());
+			System.out.println(list.get(i).getTitle());
 			System.out.println(i);
 		}
 		

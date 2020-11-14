@@ -14,6 +14,9 @@ public class VProductArticlePictureLatest {
 		private String is_linked_to_product; 
 		private String is_registered;
 		private Date registration_date; 
+		private String picture_id; 
+		private String picture;
+		
 		
 		public long getProduct_variety_code() {
 			return product_variety_code;
@@ -93,6 +96,5 @@ public class VProductArticlePictureLatest {
 		public void setPicture(String picture) {
 			this.picture = picture;
 		}
-		private String picture_id; 
-		private String picture;
+	
 }
