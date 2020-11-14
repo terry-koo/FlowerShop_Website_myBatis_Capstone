@@ -43,7 +43,7 @@
 </tr>
 
 <tr>
-	<td>수량 : <input type="number" name="quantity" size="10">개</td>
+	<td>수량 : <input type="number" name="quantity" max="20" placeholder="주문 수량">개</td>
 </tr>
 
 <tr>
