@@ -31,5 +31,9 @@
    FROM v_product_article_picture_latest
   </select>
  
+ <insert id="insertOrder" parameterType="mybatis.model.Order">
+  	INSERT into jinju_flower.order (order_id, customer_id, type_code, is_delivered, is_approved, in_cart, in_order, price, quantity, request_comment, order_date, product_id, recipient_name, recipient_address, recipient_phone)
+  	VALUES (#{order_id},#{customer_id},#{type_code},#{is_delivered},#{is_approved},#{in_cart},#{in_order},#{price},#{quantity},#{request_comment},#{order_date},#{product_id},#{recipient_name},#{recipient_address},#{recipient_phone})
+  </insert>
   
 </mapper>

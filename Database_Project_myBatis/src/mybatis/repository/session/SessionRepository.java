@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import mybatis.model.Article;
 import mybatis.model.CustomerInfo;
+import mybatis.model.Order;
 import mybatis.model.Picture;
 import mybatis.model.Product;
 import mybatis.model.test;
@@ -131,6 +132,21 @@ public class SessionRepository {
 			String statement = "mybatis.repository.mapper.selectPAP";
 			return (List<Object>)sqlSession.selectList(statement);
 		}finally{
+			sqlSession.close();
+		}
+	}
+	
+	
+	public Integer insertOrder(Order order) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.insertOrder";
+			int result = sqlSession.insert(statement,order);
+			if(result>0) {
+				sqlSession.commit();
+			}
+			return result;
+		}finally {
 			sqlSession.close();
 		}
 	}

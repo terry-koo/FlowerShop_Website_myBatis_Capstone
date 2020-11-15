@@ -25,21 +25,22 @@
 <%
  int index = Integer.parseInt(request.getParameter("index"));
  List<VProductArticlePictureLatest> list =  VProductManager.getList();
- request.setAttribute("product_id",list.get(index).getProduct_id());
+ session.setAttribute("product",list.get(index));
+
 %>
 
 <div style="height:170px;"></div>
 <div style="border: 1px dashed #BDBDBD; background-color: #D1B2FF; margin:auto; padding: 5px; text-align: center;">
 
-<form action="buy.jsp" method="post">
+<form action="order.jsp" method="post">
 <table>
 <tr>
-<td height="500px" width="70%" rowspan="5"><img src="<%=list.get(index).getPicture()%>"></td>
-<td>상품명 : <%= list.get(index).getTitle() %></td>
+<td height="400px" width="70%" rowspan="6"><img src="<%=list.get(index).getPicture()%>"></td>
+<td>상품명 : <%= list.get(index).getTitle() %> </td>
 </tr>
 
 <tr>
-	<td>가격 : <%= list.get(index).getPrice() %></td>
+	<td>가격 : <%= list.get(index).getPrice() %> 원</td>
 </tr>
 
 <tr>
@@ -47,7 +48,17 @@
 </tr>
 
 <tr>
-	<td><input type="submit" value="구매하기" /> <input type="submit" value="장바구니" /></td>
+	<td>
+		타입 : <input type="radio" name="type" value="1">축하
+		<input type="radio" name="type" value="2">결혼
+		<input type="radio" name="type" value="3">입학
+		<input type="radio" name="type" value="4">장례
+		<input type="radio" name="type" value="5">이벤트
+	</td>
+</tr>
+
+<tr>
+	<td><input type="submit" name="action" value="구매하기" /> <input type="submit" name="action" value="장바구니" /></td>
 </tr>
 
 <tr>
