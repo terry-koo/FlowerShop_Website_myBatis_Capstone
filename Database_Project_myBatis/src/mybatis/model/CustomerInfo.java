@@ -1,6 +1,11 @@
 package mybatis.model;
 
 import java.sql.Date;
+import java.util.HashMap;
+
+import org.apache.ibatis.session.SqlSession;
+
+import mybatis.repository.session.AzureMySQLDB;
 
 public class CustomerInfo {
 	private String customer_id;
@@ -90,5 +95,18 @@ public class CustomerInfo {
 		
 	}
 
+	public static CustomerInfo getCustomerInfoById(String id) {
+		HashMap<String, String> parameter = new HashMap<>();
+		parameter.put("id", id);
+		String stmtURI = "mybatis.repository.mapper.customerMapper.selectCustomerInfoByID";
+		SqlSession sqlSession = AzureMySQLDB.openSession();
+		CustomerInfo customerInfo;
+		try {
+			customerInfo = sqlSession.selectOne(stmtURI, parameter);
+			return customerInfo;
+		}finally{
+			sqlSession.close();
+		}
+	}
 	
 }

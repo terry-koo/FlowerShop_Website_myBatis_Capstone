@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import mybatis.model.ArticlePost;
 import mybatis.repository.session.AzureMySQLDB;
 
-public class ArticleManager {
+public class ArticlePostManager {
 	private static ArrayList<ArticlePost> articlePostList;
 	
 	
@@ -30,8 +30,15 @@ public class ArticleManager {
 		}
 	}
 	
-	public static ArticlePost getArticleByIndex(int i) {
+	public static ArticlePost getArticlePostByIndex(int i) {
 		return articlePostList.get(i);
+	}
+	public static ArticlePost getArticlePostByIndex(String i) {
+		return articlePostList.get(Integer.valueOf(i));
+	}
+	
+	public static ArrayList<ArticlePost> getArticlePostList(){
+		return articlePostList;
 	}
 
 }

@@ -86,7 +86,7 @@ public class ArticlePost {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	public int getLikeCount() {
+	public Integer getLikeCount() {
 		return likeCount;
 	}
 	public void setLikeCount(Integer likeCount) {

@@ -16,7 +16,9 @@
 			(SELECT p.picture FROM picture p WHERE p.article_id = a.article_id) as picture
 			<!--CAST((SELECT COUNT(*) FROM like lk WHERE lk.article_id = a.article_id) AS CHAR) as likeCount-->
 		FROM article a
+		WHERE a.is_linked_to_product = 'F'
 	</select>
+	
 	<select id="selectArticlePostOne" resultType="mybatis.model.ArticlePost" parameterType="String">
 		SELECT
 			a.article_id,
@@ -30,11 +32,27 @@
 			<!--  (SELECT COUNT(*) FROM like lk WHERE lk.article_id = a.article_id) as likeCount-->
 		FROM article a
 		WHERE a.article_id = #{article_id}
+		AND a.is_linked_to_product = 'F'
 	</select>
+	
 	<insert id="insertArticle" parameterType="java.util.HashMap">
   		INSERT INTO article(article_id, customer_id, title, content, is_linked_to_product, is_registered, registration_date)
   		VALUES (#{article_id}, #{customer_id}, #{title}, #{content}, #{is_linked_to_product}, #{is_registered}, now());
 	</insert>
   
+    
+  <!-- 
+    <resultMap id="ArticlePostOne" type="mybatis.model.ArticlePost">
+    	<result column="article_id" property="article_id" jdbcType="VARCHAR"/>
+    	<result column="customer_id" property="customer_id" jdbcType="VARCHAR"/>
+    	<result column="title" property="title" jdbcType="VARCHAR"/>
+    	<result column="content" property="content" jdbcType="TEXT"/>
+    	<result column="is_linked_to_product" property="is_linked_to_product" jdbcType="CHAR"/>
+    	<result column="is_registered" property="is_registered" jdbcType="CHAR"/>
+    	<result column="registration_date" property="registration_date" jdbcType="DATETIME"/>
+    	<result column="picture" property="picture" jdbcType="TEXT"/>
+    	<result column="likeCount" property="likeCount" jdbcType="BIGINT"/>
+    </resultMap>
+    -->
     
 </mapper>
