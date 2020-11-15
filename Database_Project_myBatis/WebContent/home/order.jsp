@@ -143,7 +143,7 @@
 	<td colspan="2"><h3>결제 정보</h3></td>
 </tr>
 <tr>
-	<td>총상품 가격</td>
+	<td>총상품 가격 </td>
 	<td><%= price %></td>
 </tr>
 
