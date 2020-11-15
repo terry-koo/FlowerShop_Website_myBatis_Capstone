@@ -93,5 +93,5 @@ input{
 </form>
 </div>
 </body>
-<script src="../home/js/imageScript.js"></script> <!-- 사진 불러오는 js -->
+<script src="../home/js/imageScript.js"></script>
 </html>

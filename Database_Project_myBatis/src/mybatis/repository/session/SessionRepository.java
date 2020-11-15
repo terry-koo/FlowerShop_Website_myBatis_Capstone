@@ -14,7 +14,6 @@ import mybatis.model.CustomerInfo;
 import mybatis.model.Order;
 import mybatis.model.Picture;
 import mybatis.model.Product;
-import mybatis.model.test;
 
 
 
@@ -62,16 +61,6 @@ public class SessionRepository {
 	}
 	
 	
-	public test selectIdNameByID(long id) {
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		try {
-			String statement = "mybatis.repository.mapper.selectId";
-			return (test)sqlSession.selectOne(statement,id);
-		}finally{
-			sqlSession.close();
-		}
-	}
-	
 
 	public CustomerInfo selectOneByHashMap(String uri, HashMap<String, String> parameter) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -86,7 +75,7 @@ public class SessionRepository {
 	public Integer insertProduct(Product product) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
-			String statement = "mybatis.repository.mapper.insertProduct";
+			String statement = "mybatis.repository.mapper.productMapper2.insertProduct";
 			int result = sqlSession.insert(statement,product);
 			if(result>0) {
 				sqlSession.commit();
@@ -100,7 +89,7 @@ public class SessionRepository {
 	public Integer insertArticle(Article article) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
-			String statement = "mybatis.repository.mapper.insertArticle";
+			String statement = "mybatis.repository.mapper.articleMapper2.insertArticle";
 			int result = sqlSession.insert(statement,article);
 			if(result>0) {
 				sqlSession.commit();
@@ -111,25 +100,13 @@ public class SessionRepository {
 		}
 	}
 	
-	public Integer insertPicture(Picture picture) {
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		try {
-			String statement = "mybatis.repository.mapper.insertPicture";
-			int result = sqlSession.insert(statement,picture);
-			if(result>0) {
-				sqlSession.commit();
-			}
-			return result;
-		}finally {
-			sqlSession.close();
-		}
-	}
+
 	
 	
 	public static List<Object> selectVProductArticlePictureLatestStatic() {
 		SqlSession sqlSession = SessionRepository.openSession();
 		try {
-			String statement = "mybatis.repository.mapper.selectPAP";
+			String statement = "mybatis.repository.mapper.papMapper2.selectPAP";
 			return (List<Object>)sqlSession.selectList(statement);
 		}finally{
 			sqlSession.close();
@@ -140,7 +117,7 @@ public class SessionRepository {
 	public Integer insertOrder(Order order) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
-			String statement = "mybatis.repository.mapper.insertOrder";
+			String statement = "mybatis.repository.mapper.orderMapper2.insertOrder";
 			int result = sqlSession.insert(statement,order);
 			if(result>0) {
 				sqlSession.commit();

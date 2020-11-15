@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper.articleMapper2">
+  
+  <insert id="insertArticle" parameterType="mybatis.model.Article">
+  	INSERT into article(article_id,customer_id,title,content,is_linked_to_product,is_registered,registration_date)
+  	VALUES (#{articleId},#{customerId},#{title},#{content},#{isLinkedToProduct},#{isRegistered},#{registrationDate})
+  </insert>
+  
+
+  
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper.orderMapper2">  
+ 
+ <insert id="insertOrder" parameterType="mybatis.model.Order">
+  	INSERT into jinju_flower.order (order_id, customer_id, type_code, is_delivered, is_approved, in_cart, in_order, price, quantity, request_comment, order_date, product_id, recipient_name, recipient_address, recipient_phone)
+  	VALUES (#{order_id},#{customer_id},#{type_code},#{is_delivered},#{is_approved},#{in_cart},#{in_order},#{price},#{quantity},#{request_comment},#{order_date},#{product_id},#{recipient_name},#{recipient_address},#{recipient_phone})
+  </insert>
+  
+</mapper>
