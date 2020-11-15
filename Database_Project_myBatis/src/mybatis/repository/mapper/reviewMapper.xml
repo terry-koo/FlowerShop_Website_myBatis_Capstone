@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper.reviewMapper">
+
+	<select id="selectReviewList" resultType="mybatis.model.Review" parameterType="String">
+		SELECT 
+			review_id,
+			customer_id,
+			article_id,
+			is_registered,
+			content,
+			stars,
+			registration_date
+		FROM review
+		WHERE article_id = #{article_id}
+	</select>
+	
+	
+    
+</mapper>

@@ -98,6 +98,7 @@
 	
 	HashMap<String, String> trackingInfoMap = new HashMap<>();
 	trackingInfoMap.put("customer_id", customer_id_HEAD);
+	trackingInfoMap.put("ipv6_address", request.getRemoteAddr());
 	trackingInfoMap.put("visit_page", requestedURL);
 	
 	

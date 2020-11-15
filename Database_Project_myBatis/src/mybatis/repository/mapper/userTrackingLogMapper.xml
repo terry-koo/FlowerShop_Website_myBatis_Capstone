@@ -5,8 +5,8 @@
 <mapper namespace="mybatis.repository.mapper.userTrackingLogMapper">
 
 <insert id="insertUserTrackingLog" parameterType="java.util.HashMap">
-  	INSERT INTO user_tracking_log(customer_id, visit_date , visit_page)
-  	VALUES (#{customer_id}, now(), #{visit_page});
+  	INSERT INTO user_tracking_log(customer_id, ipv6_address,visit_date , visit_page)
+  	VALUES (#{customer_id}, #{ipv6_address}, now(), #{visit_page});
 </insert>
 
   

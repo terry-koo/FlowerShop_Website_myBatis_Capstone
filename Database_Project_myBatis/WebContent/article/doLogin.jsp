@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="
-	mybatis.model.CustomerInfo,
-	mybatis.repository.session.AzureMySQLDB,
-	org.apache.ibatis.session.SqlSession,
-	java.util.HashMap
-"%>
 <!DOCTYPE html>
 <html>
 <head>

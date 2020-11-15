@@ -64,7 +64,7 @@
   <td align="left">
   <div class="container">
       <!-- Input Markup -->
-      <input type="file" id="default-file" hidden="hidden" />
+      <input type="file" id="default-file" style="visibility:hidden;" />
 
       <!-- Button Markup -->
       <button id="custom-btn" type="button" class="btn">

@@ -19,5 +19,8 @@
     <mapper resource="mybatis/repository/mapper/customerMapper.xml"/>
 	<mapper resource="mybatis/repository/mapper/pictureMapper.xml"/>
 	<mapper resource="mybatis/repository/mapper/userTrackingLogMapper.xml"/>
+	<mapper resource="mybatis/repository/mapper/articleMapper.xml"/>
+	<mapper resource="mybatis/repository/mapper/tagMapper.xml"/>
+	<mapper resource="mybatis/repository/mapper/reviewMapper.xml"/>
   </mappers>
 </configuration>
