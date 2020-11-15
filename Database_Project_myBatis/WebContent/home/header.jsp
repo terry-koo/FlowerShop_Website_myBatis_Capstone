@@ -56,7 +56,7 @@
 								<li><a href="#">정기 배송</a></li>
 							</ul>
 						</li>
-						<li><a href="#">공지사항</a></li>
+						<li><a href="../article/article.jsp">게시판</a></li>
 						
 						<%
 							if(customerInfoHeader != null){
@@ -68,7 +68,7 @@
 								<li><b><%=customerInfoHeader.getName() %></b> 님!</li>
 								<hr>
 								<li><a href="#">주문내역</a></li>
-								<li><a href="#">프로필</a></li>
+								<li><a href="../userInfo/userInfo.jsp">프로필</a></li>
 								<li><a href="#">장바구니</a></li>
 								<li><a href="#">쿠폰</a></li>
 								<li><a href="<%=url%>/login/doLogout.jsp">로그아웃</a></li>
