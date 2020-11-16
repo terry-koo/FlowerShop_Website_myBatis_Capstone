@@ -55,6 +55,7 @@ else{
 		}
 	}
 	catch(Exception e){
+		sqlSession.rollback();
 		session.setAttribute("session_message", "joinFailed");
 		response.sendRedirect("login.jsp");
 	}

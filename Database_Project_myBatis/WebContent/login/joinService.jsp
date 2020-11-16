@@ -162,8 +162,8 @@
                 <tr>
                     <td id="title"></td>
                     <td>
-                        <input type="radio" name="gender" value="M" checked>남성
-                        <input type="radio" name="gender" value="W" checked>여성
+                        <input type="radio" name="gender" value="M" >남성
+                        <input type="radio" name="gender" value="W" >여성
                         <input type="radio" name="gender" value="N" checked>무응답
                     </td>
                 </tr>

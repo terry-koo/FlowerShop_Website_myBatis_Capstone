@@ -11,6 +11,7 @@
     	cb.email,
     	cde.gender,
     	cde.birthday,
+    	cde.phone,
     	cde.address
     FROM customer_basic cb JOIN customer_detail cde
     ON cb.customer_id = cde.customer_id
@@ -41,6 +42,16 @@
   	VALUES (#{customer_id}, #{birthday}, #{gender}, #{phone}, #{address});
   </insert>
   
+  <update id="updateCustomerBasicName" parameterType="java.util.HashMap">
+  	UPDATE customer_basic SET name=#{name} WHERE customer_id = #{customer_id} 
+  </update>
+  <update id="updateCustomerBasicPassword" parameterType="java.util.HashMap">
+  	UPDATE customer_basic SET password=#{password} WHERE customer_id = #{customer_id} 
+  </update>
+  <update id="updateCustomerDetail" parameterType="java.util.HashMap">
+  	UPDATE customer_detail SET birthday=#{birthday}, gender=#{gender}, phone=#{phone}, address=#{address}
+  	WHERE customer_id = #{customer_id} 
+  </update>
 
  
   
