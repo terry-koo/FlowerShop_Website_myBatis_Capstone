@@ -34,6 +34,7 @@
 	
 
 	String redirect = (String)session.getAttribute("session_redirectURL");
+	session.removeAttribute("session_redirectURL");
 	if(customerInfo != null){
 		session.setAttribute("session_customerInfo", customerInfo);
 		if( redirect != null){

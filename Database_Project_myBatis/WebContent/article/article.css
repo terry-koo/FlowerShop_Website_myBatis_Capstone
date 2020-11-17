@@ -12,6 +12,7 @@ body {
 }
 
 .container {
+	width:830px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -50,4 +51,8 @@ tbody {
 		}
 	}
 
+}
+a:hover{
+	color:black;
+	font-weight:bold;
 }

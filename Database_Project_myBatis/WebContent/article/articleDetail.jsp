@@ -28,7 +28,7 @@ Review[] reviews = article.getReviews();
 <body>
 
 
-<table>
+<table style="width:1140px;">
 	<tr>
 		<td colspan="3"><h2><%=article.getTitle() %><h2></td>
 	</tr>
