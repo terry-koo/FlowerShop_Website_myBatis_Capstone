@@ -11,7 +11,7 @@
 	</select>
 	<insert id="insertTag" parameterType="java.util.HashMap">
   		INSERT INTO tag(article_id, tag_name)
-  		VALUES (#{article_id}, #{tag_name})
+  		VALUES (#{article_id}, replace(#{tag_name}," ",""))
 	</insert>
     
 </mapper>

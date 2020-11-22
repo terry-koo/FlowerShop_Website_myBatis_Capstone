@@ -12,6 +12,7 @@ public class AzureMySQLDB {
 	
 	static {
 		reNewSqlSessionFactory();
+		System.out.println("AzureMySQLDB ready");
 	}
 	
 	public static SqlSession openSession() {

@@ -13,10 +13,12 @@
 			a.is_linked_to_product,
 			a.is_registered,
 			a.registration_date,
+			(SELECT c.name FROM customer_basic c WHERE customer_id=a.customer_id) as author_name,
 			(SELECT p.picture FROM picture p WHERE p.article_id = a.article_id) as picture
 			<!--CAST((SELECT COUNT(*) FROM like lk WHERE lk.article_id = a.article_id) AS CHAR) as likeCount-->
 		FROM article a
 		WHERE a.is_linked_to_product = 'F'
+		ORDER BY a.registration_date
 	</select>
 	
 	<select id="selectArticlePostOne" resultType="mybatis.model.ArticlePost" parameterType="String">
@@ -28,6 +30,7 @@
 			a.is_linked_to_product,
 			a.is_registered,
 			a.registration_date,
+			(SELECT c.name FROM customer_basic c WHERE customer_id=a.customer_id) as author_name,
 			(SELECT p.picture FROM picture p WHERE p.article_id = a.article_id) as picture
 			<!--  (SELECT COUNT(*) FROM like lk WHERE lk.article_id = a.article_id) as likeCount-->
 		FROM article a

@@ -38,7 +38,7 @@ a{
 	ArrayList<ArticlePost> articlePostList = ArticlePostManager.getArticlePostList();
 	ArticlePost article = null;
 	
-	for(int i = 0; i < articlePostList.size(); i++){
+	for(int i = articlePostList.size()-1; i >= 0 ; i--){
 		article = articlePostList.get(i);
 %>	
 
@@ -46,9 +46,9 @@ a{
 	<tr>
 	
 		<td><%=i%></td>
-		<td><a href="articleDetail.jsp?articleNo=<%=i%>"><%=article.getTitle() %></a></td>
+		<td style="width:425px;"><a href="articleDetail.jsp?article_id=<%=article.getArticle_id()%>"><%=article.getTitle() %></a></td>
 		<td><%=article.getRegistration_date() %></td>
-		<td><%=CustomerInfo.getCustomerInfoById(article.getCustomer_id()).getName() %></td>
+		<td><%=article.getAuthor_name() %></td>
 
 	</tr>	
 

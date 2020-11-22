@@ -16,6 +16,7 @@ public class ArticlePost {
 	private char is_registered;
 	private Date registration_date;
 	private String picture;
+	private String author_name;
 	private Integer likeCount;
 	
 	private String[] tags;
@@ -86,15 +87,18 @@ public class ArticlePost {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
+	public String getAuthor_name() {
+		return author_name;
+	}
+	public void setAuthor_name(String author_name) {
+		this.author_name = author_name;
+	}
 	public Integer getLikeCount() {
 		return likeCount;
 	}
 	public void setLikeCount(Integer likeCount) {
 		this.likeCount = likeCount;
 	}
-	
-	
-	
 	
 	public String[] getTags() {
 		return tags;
@@ -108,6 +112,7 @@ public class ArticlePost {
 	public void setReviews(Review[] reviews) {
 		this.reviews = reviews;
 	}
+	
 
 	
 }

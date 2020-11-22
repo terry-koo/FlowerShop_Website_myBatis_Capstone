@@ -8,6 +8,7 @@
 		SELECT 
 			review_id,
 			customer_id,
+			(SELECT c.name FROM customer_basic c WHERE c.customer_id=customer_id) as author_name,
 			article_id,
 			is_registered,
 			content,
@@ -16,7 +17,11 @@
 		FROM review
 		WHERE article_id = #{article_id}
 	</select>
+	<insert id="insertReview" parameterType="java.util.HashMap">
+		INSERT INTO review(review_id, customer_id, article_id, is_registered, content, stars, registration_date)
+  		VALUES (#{review_id}, #{customer_id}, #{article_id}, #{is_registered}, #{content}, #{stars}, now());
 	
+	</insert>
 	
     
 </mapper>

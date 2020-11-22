@@ -5,6 +5,7 @@ import java.sql.Date;
 public class Review {
 	private String review_id;
 	private String customer_id;
+	private String author_name;
 	private String article_id;
 	private String is_registered;
 	private String content;
@@ -22,6 +23,12 @@ public class Review {
 	}
 	public void setCustomer_id(String customer_id) {
 		this.customer_id = customer_id;
+	}
+	public String getAuthor_name() {
+		return author_name;
+	}
+	public void setAuthor_name(String author_name) {
+		this.author_name = author_name;
 	}
 	public String getArticle_id() {
 		return article_id;
@@ -53,4 +60,5 @@ public class Review {
 	public void setRegistration_date(Date registration_date) {
 		this.registration_date = registration_date;
 	}
+
 }
