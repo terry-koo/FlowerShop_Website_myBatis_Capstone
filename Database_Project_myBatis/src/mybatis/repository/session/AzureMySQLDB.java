@@ -36,5 +36,5 @@ public class AzureMySQLDB {
 		
 		AzureSessionFacotry = new SqlSessionFactoryBuilder().build(inputStream);
 	}
-	
+	private AzureMySQLDB() {};
 }

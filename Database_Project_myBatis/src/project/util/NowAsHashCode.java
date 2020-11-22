@@ -8,4 +8,6 @@ public class NowAsHashCode {
 		Date now = new Date();
 		return tableAbbr+Math.abs(now.toString().hashCode());
 	}
+	
+	private NowAsHashCode() {};
 }

@@ -38,7 +38,9 @@ Review[] reviews = article.getReviews();
 	</tr>
 	
 	<tr>
+	<%if(article.getPicture().length() > 20){ %>
 		<td colspan="3"><img style="width:100%;height:100%" src="<%=article.getPicture()%>"><br><br></td>
+	<%} %>
 	</tr>
 	<tr>
 		<td colspan="3"><p id="content"><%=article.getContent() %></p><br><hr></td>

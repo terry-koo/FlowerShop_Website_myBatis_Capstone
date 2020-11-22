@@ -10,7 +10,7 @@ import mybatis.model.ArticlePost;
 import mybatis.repository.session.AzureMySQLDB;
 
 public class ArticlePostManager {
-	private static ArrayList<ArticlePost> articlePostList;
+	private static ArrayList<ArticlePost> articlePostList = null;
 	
 	
 	static {
@@ -28,6 +28,9 @@ public class ArticlePostManager {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
+		finally{
+			sqlSession.close();
+		}
 	}
 	
 	public static ArticlePost getArticlePostByIndex(int i) {
@@ -41,4 +44,5 @@ public class ArticlePostManager {
 		return articlePostList;
 	}
 
+	private ArticlePostManager() {};
 }

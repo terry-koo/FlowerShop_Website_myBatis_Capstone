@@ -101,21 +101,28 @@
 	trackingInfoMap.put("ipv6_address", request.getRemoteAddr());
 	trackingInfoMap.put("visit_page", requestedURL);
 	
+
+	new Thread(
+			()->{
+				String stmtURI_user_tracking_log = "mybatis.repository.mapper.userTrackingLogMapper.insertUserTrackingLog";
+				SqlSession sqlSessionHeader = AzureMySQLDB.openSession();
+				try{
+					int recorded = sqlSessionHeader.insert(stmtURI_user_tracking_log, trackingInfoMap);
+					if(recorded>0){
+						sqlSessionHeader.commit();
+					}
+				}
+				catch(Exception e){
+					
+				}
+				finally{
+					sqlSessionHeader.close();
+				}
+			}
+			
+			).start();
 	
-	String stmtURI_user_tracking_log = "mybatis.repository.mapper.userTrackingLogMapper.insertUserTrackingLog";
-	SqlSession sqlSessionHeader = AzureMySQLDB.openSession();
-	try{
-		int recorded = sqlSessionHeader.insert(stmtURI_user_tracking_log, trackingInfoMap);
-		if(recorded>0){
-			sqlSessionHeader.commit();
-		}
-	}
-	catch(Exception e){
-		
-	}
-	finally{
-		sqlSessionHeader.close();
-	}
+	
 	
 %>
 </html>

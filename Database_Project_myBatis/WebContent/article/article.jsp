@@ -20,10 +20,6 @@ a{
 </style>
 
 <body> 
-<%
-	ArrayList<ArticlePost> articlePostList = ArticlePostManager.getArticlePostList();
-	ArticlePost article = null;
-%>
 
 <div class="container">
 <button type="button" onclick="location.href='writeArticle.jsp'" style="float:right;">글쓰기</button>
@@ -39,6 +35,9 @@ a{
 	<tbody>
 
 <%	
+	ArrayList<ArticlePost> articlePostList = ArticlePostManager.getArticlePostList();
+	ArticlePost article = null;
+	
 	for(int i = 0; i < articlePostList.size(); i++){
 		article = articlePostList.get(i);
 %>	
