@@ -34,7 +34,7 @@ int size = list.size();
 		<%for(int k=(0+i); k<(i+4); k++){ 
 			if(k>=size){break;}
 		%>
-			<td><a href="http://localhost:8080/Database_Project_myBatis/home/productDetail.jsp?index=<%=k%>" >
+			<td><a href="https://drflower.azurewebsites.net/Database_Project_myBatis/home/productDetail.jsp?index=<%=k%>" >
 			<%=list.get(k).getTitle()%></a></td>
 		<%} %>
 		</tr>
