@@ -54,7 +54,7 @@ Review[] reviews = article.getReviews();
 			String[] tags = article.getTags();
 			for(int i = 0; i < tags.length; i++){
 		%>
-			<a href="#"><%=tags[i]%></a>,&nbsp; 
+			<a href="tagSearch.jsp?tag=<%=tags[i]%>"><%=tags[i]%></a>,&nbsp; 
 			
 		<%
 			}

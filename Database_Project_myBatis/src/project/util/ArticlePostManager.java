@@ -55,6 +55,18 @@ public class ArticlePostManager {
 		}
 		return article;
 	}
+	public static ArrayList<ArticlePost> getArticlePostListIncludeThisTag(String tag){
+		return (ArrayList<ArticlePost>) articlePostList.stream().filter((article)->{
+		String[] tags = article.getTags();
+		for(int i = 0; i < tags.length; i++) {
+			if(tags[i].equalsIgnoreCase(tag)) {
+				return true;
+			}
+		}
+		return false;
+		
+		}).collect(Collectors.toList());
+	}
 
 	public static int insertArticleDB(HashMap<String, String> articleParam, HashMap<String, String> pictureParam,
 			HashMap<String, String> tagParam, String[] tags) {
