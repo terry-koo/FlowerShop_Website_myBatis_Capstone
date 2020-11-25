@@ -121,8 +121,6 @@ for(int i = 0; i<order_id.length; i++){
 }
 %>
 
-
-
 <tr>
 	<td colspan="2"><h3>결제 정보</h3></td>
 </tr>

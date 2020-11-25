@@ -32,7 +32,7 @@
 
 	<h1> 주문완료  </h1>
 	<h3> 주문내역을 꼭 확인해주세요  </h3>
-	<a href="../home/index.jsp">-> 주문내역 확인하기 <-</a>
+	<a href="../home/index.jsp">-> 주문내역 확인하기 <-</a> <br>
 	<a href="../home/index.jsp">-> 메인페이지로 돌아가기 <-</a>
 
 </div>
