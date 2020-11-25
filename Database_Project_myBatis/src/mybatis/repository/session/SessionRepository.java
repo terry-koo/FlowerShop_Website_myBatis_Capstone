@@ -131,7 +131,15 @@ public class SessionRepository {
 		}
 	}
 	
-
+	public static List<Object> selectAllMember() {
+		SqlSession sqlSession = SessionRepository.openSession();
+		try {
+			String statement = "mybatis.repository.mapper.memberMapper.selectAllMember";
+			return (List<Object>)sqlSession.selectList(statement);
+		}finally{
+			sqlSession.close();
+		}
+	}
 	
 	
 	public static List<Object> selectVProductArticlePictureLatestStatic() {

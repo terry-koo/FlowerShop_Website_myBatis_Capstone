@@ -26,5 +26,6 @@
 	<mapper resource="mybatis/repository/mapper/papMapper2.xml"/>
 	<mapper resource="mybatis/repository/mapper/productMapper2.xml"/>
 	<mapper resource="mybatis/repository/mapper/basket.xml"/>
+	<mapper resource="mybatis/repository/mapper/memberMapper.xml"/>
   </mappers>
 </configuration>

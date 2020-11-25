@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper.memberMapper">
+
+	<select id="selectAllMember" resultType="mybatis.model.Member">
+		SELECT customer_basic.customer_id as customer_id, birthday, gender, phone, address, authority_code, name, email 
+		FROM jinju_flower.customer_detail,jinju_flower.customer_basic;
+	</select>
+	
+    
+</mapper>
