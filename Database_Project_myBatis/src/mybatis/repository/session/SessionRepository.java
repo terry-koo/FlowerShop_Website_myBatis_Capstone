@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import mybatis.model.Article;
+import mybatis.model.Basket;
 import mybatis.model.CustomerInfo;
 import mybatis.model.Order;
 import mybatis.model.Picture;
@@ -70,7 +71,37 @@ public class SessionRepository {
 			sqlSession.close();
 		}
 	}
-
+	
+	
+	public static Order selectOrder(String orderId) {
+		SqlSession sqlSession = SessionRepository.openSession();
+		try {
+			String statement = "mybatis.repository.mapper.orderMapper2.selectOrder";
+			return sqlSession.selectOne(statement,orderId);
+		}finally{
+			sqlSession.close();
+		}
+	}
+	
+	
+	//장바구니에서 주문으로 변경
+	public Integer updateOrder(Order order) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.orderMapper2.updateOrder";
+			int result = sqlSession.update(statement,order);
+			if(result>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+			return result;
+		}finally {
+			sqlSession.close();
+		}
+	}
+	
+	
 	
 	public Integer insertProduct(Product product) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -108,6 +139,26 @@ public class SessionRepository {
 		try {
 			String statement = "mybatis.repository.mapper.papMapper2.selectPAP";
 			return (List<Object>)sqlSession.selectList(statement);
+		}finally{
+			sqlSession.close();
+		}
+	}
+	
+	public static List<Object> selectBasket(String id) {
+		SqlSession sqlSession = SessionRepository.openSession();
+		try {
+			String statement = "mybatis.repository.mapper.basket.selectBasket";
+			return (List<Object>)sqlSession.selectList(statement,id);
+		}finally{
+			sqlSession.close();
+		}
+	}
+	
+	public static Basket selectBasketWithOrderId(String orderId) {
+		SqlSession sqlSession = SessionRepository.openSession();
+		try {
+			String statement = "mybatis.repository.mapper.basket.selectBasketWithOrderId";
+			return sqlSession.selectOne(statement,orderId);
 		}finally{
 			sqlSession.close();
 		}

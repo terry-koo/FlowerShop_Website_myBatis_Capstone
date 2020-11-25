@@ -69,7 +69,7 @@
 								<hr>
 								<li><a href="#">주문내역</a></li>
 								<li><a href="../userInfo/userInfo.jsp">프로필</a></li>
-								<li><a href="#">장바구니</a></li>
+								<li><a href="../basket/basket.jsp">장바구니</a></li>
 								<li><a href="#">쿠폰</a></li>
 								<li><a href="<%=contextPath%>/login/doLogout.jsp">로그아웃</a></li>
 							</ul>

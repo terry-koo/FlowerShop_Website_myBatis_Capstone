@@ -14,7 +14,7 @@
 
 
 <div style="height:170px;"></div>
-<div style="border: 1px dashed #BDBDBD; background-color: #D1B2FF; margin:auto; padding: 5px; text-align: center;">
+<div style="border: 1px dashed #BDBDBD; background-color: #c2d0f2; margin:auto; padding: 5px; text-align: center;">
 
 <table style="margin:auto; width:1000px; table-layout:fixed;" border="1" >
 
@@ -34,7 +34,7 @@ int size = list.size();
 		<%for(int k=(0+i); k<(i+4); k++){ 
 			if(k>=size){break;}
 		%>
-			<td><a href="https://drflower.azurewebsites.net/Database_Project_myBatis/home/productDetail.jsp?index=<%=k%>" >
+			<td><a href="productDetail.jsp?index=<%=k%>" >
 			<%=list.get(k).getTitle()%></a></td>
 		<%} %>
 		</tr>

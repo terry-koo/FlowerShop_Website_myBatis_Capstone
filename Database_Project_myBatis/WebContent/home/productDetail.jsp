@@ -18,7 +18,9 @@
   table {
     width: 60%;
     height: 800px;
+    color: black;
   }
+  
 </style>
 
 <body>
@@ -30,7 +32,7 @@
 %>
 
 <div style="height:170px;"></div>
-<div style="border: 1px dashed #BDBDBD; background-color: #D1B2FF; margin:auto; padding: 5px; text-align: center;">
+<div style="border: 1px dashed #BDBDBD; background-color: #c2d0f2; margin:auto; padding: 5px; text-align: center;">
 
 <form action="order.jsp" method="post">
 <table>
@@ -44,7 +46,7 @@
 </tr>
 
 <tr>
-	<td>수량 : <input type="number" name="quantity" max="20" placeholder="주문 수량">개</td>
+	<td>수량 : <input type="number"  name="quantity" max="20" placeholder="주문 수량">개</td>
 </tr>
 
 <tr>
