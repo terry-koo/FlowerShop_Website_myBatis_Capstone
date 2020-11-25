@@ -94,7 +94,8 @@ Review[] reviews = article.getReviews();
 	<form action="doWriteReview.jsp" method="post">
 		<td><%=reviewerName %></td>
 		<td style="width:900px;">
-		<textarea style="width:780px;" name="content" placeholder="<%=customerInfoHeader==null?reviewerName:' '%>"></textarea>
+		<textarea style="width:780px;" name="content" placeholder="<%=customerInfoHeader==null?reviewerName:' '%>"></textarea><br>
+		평점
 		<select name="stars" style="width:80px;">
    				<option value="5">5</option>
 		    	<option value="4">4</option>

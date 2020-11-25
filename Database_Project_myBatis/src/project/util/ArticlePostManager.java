@@ -82,7 +82,12 @@ public class ArticlePostManager {
 			int pictureState = sqlSession.insert(pictureMapperUri, pictureParam);
 			int tagState = 0;
 			for (int i = 0; i < tags.length; i++) {
-				tagParam.put("tag_name", tags[i]);
+				if(tags[i].charAt(0) == '#') {
+					tagParam.put("tag_name", tags[i]);
+				}
+				else {
+					tagParam.put("tag_name", '#'+tags[i]);
+				}
 				tagState += sqlSession.insert(tagMapperUri, tagParam);
 			}
 

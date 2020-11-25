@@ -64,13 +64,43 @@ for(int i=0; i<size; i++){
 	<td><%= memberArray.get(i).getEmail()%></td>
 	
 	<%
+	
+	int rankCode = memberArray.get(i).getAuthority_code();
+	String rank = null;
+	switch(rankCode){
+	case 1:
+		rank = "관리자";
+		break;
+	case 2:
+		rank = "스탭";
+		break;
+	case 3:
+		rank = "VIP";
+		break;
+	case 4:
+		rank = "일반고객";
+		break;
+	}
+	%>
+	
+	
+	<%
 	if(memberArray.get(i).getAuthority_code()==1){
 	 %>
-	<td style="color:red;"><%= memberArray.get(i).getAuthority_code()%></td>
+	<td style="color:#ff5555;"><%= rank%></td>
 	<%
-	}else{
+	}
+	else if (memberArray.get(i).getAuthority_code()==2){%>
+		<td style="color:#00AA00;"><%= rank%></td>
+	<% 
+	}
+	else if (memberArray.get(i).getAuthority_code()==3){%>
+	<td style="color:#AAAA00;"><%= rank%></td>
+	<% 
+	}
+	else{
 	%>
-	 <td><%= memberArray.get(i).getAuthority_code()%></td>
+	 <td><%= rank%></td>
 	 <%
 	}
 	 %>
