@@ -62,7 +62,18 @@ for(int i=0; i<size; i++){
 	<td><%= memberArray.get(i).getPhone()%></td>
 	<td><%= memberArray.get(i).getAddress()%></td>
 	<td><%= memberArray.get(i).getEmail()%></td>
-	<td><%= memberArray.get(i).getAuthority_code()%></td>
+	
+	<%
+	if(memberArray.get(i).getAuthority_code()==1){
+	 %>
+	<td style="color:red;"><%= memberArray.get(i).getAuthority_code()%></td>
+	<%
+	}else{
+	%>
+	 <td><%= memberArray.get(i).getAuthority_code()%></td>
+	 <%
+	}
+	 %>
 </tr>
 <%
 }
