@@ -5,8 +5,9 @@
 <mapper namespace="mybatis.repository.mapper.memberMapper">
 
 	<select id="selectAllMember" resultType="mybatis.model.Member">
-		SELECT customer_basic.customer_id as customer_id, birthday, gender, phone, address, authority_code, name, email 
-		FROM jinju_flower.customer_detail,jinju_flower.customer_basic;
+		SELECT customer_basic.customer_id as customer_id, birthday, gender, phone, address, authority_code, name, email, password 
+		FROM jinju_flower.customer_detail,jinju_flower.customer_basic
+		where customer_detail.customer_id = customer_basic.customer_id ;
 	</select>
 	
     
