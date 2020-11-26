@@ -79,8 +79,8 @@ try{
 	
 	if(state>0){
 		sqlSession.commit();
-<<<<<<< HEAD
 		
+		//데이터 실시간으로 들어가게
 		if(result1>0 && result2>0){
 			VProductArticlePictureLatest v = new VProductArticlePictureLatest();
 			v.setArticle_id("A"+dateToHashCode);
