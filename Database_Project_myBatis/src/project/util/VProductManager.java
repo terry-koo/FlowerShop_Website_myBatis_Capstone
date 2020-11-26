@@ -23,6 +23,7 @@ public class VProductManager {
 		return productArray;
 	}
 	
+	//실시간으로 데이터 들어가게
 	public static void addElement(VProductArticlePictureLatest v) {
 		productArray.add(0,v);
 	}

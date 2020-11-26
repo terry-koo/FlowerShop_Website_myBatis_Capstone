@@ -57,7 +57,13 @@ long type_code = Long.parseLong(request.getParameter("type_code"));
 %>
 
 <script>
-alert('주문완료 현재 주문상태를 확인해주세요')
+var answer = confirm ("주문완료! 현재 주문상태를 확인해주세요.");
+if (answer){
+window.location.href = "index.jsp";
+}
+else{
+	window.location.href = "index.jsp";
+}
 </script>
 
 </body>

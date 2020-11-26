@@ -3,6 +3,7 @@
 <%@page import="mybatis.repository.session.SessionRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ include file="checkAuthority.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
