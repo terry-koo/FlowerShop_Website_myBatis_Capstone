@@ -71,7 +71,7 @@
 								<li><a href="../userInfo/userInfo.jsp">프로필</a></li>
 								<li><a href="../basket/basket.jsp">장바구니</a></li>
 								<li><a href="#">쿠폰</a></li>
-								<li><a href="<%=contextPath%>/login/doLogout.jsp">로그아웃</a></li>
+								<li><a href="../login/doLogout.jsp">로그아웃</a></li>
 							</ul>
 						</li>
 						<%
@@ -81,8 +81,17 @@
 							<li><a href="<%=contextPath%>/login/login.jsp">로그인</a></li>
 						<%
 							}
-						%>
 						
+						if(customerInfoHeader != null && customerInfoHeader.getAuthority_code() <= 2){
+						%>
+							<li class="has-dropdown">
+							<a href="#"><b style="color:white;">관리자 페에지</b></a>
+							<ul class="dropdown">
+								<li><a href="../admin/orderManagement.jsp">주문관리</a></li>
+								<li><a href="../admin/allMember.jsp">회원 조회</a></li>
+							</ul>
+						</li>
+						<%} %>
 					</ul>
 				</div>
 			</div>

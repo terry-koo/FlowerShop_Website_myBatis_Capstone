@@ -24,4 +24,50 @@
 	where order_id = #{order_id};
   </select>
   
+  <select id="selectOrderORCart" parameterType="java.util.HashMap"  resultType="mybatis.model.OrderInfoForAdmin">
+SELECT 
+	o.order_id,
+    o.customer_id,
+    o.is_delivered,
+    o.is_approved,
+    o.in_cart,
+    o.in_order,
+    o.price,
+    o.quantity,
+    o.request_comment,
+    o.order_date,
+    o.recipient_name,
+    o.recipient_address,
+    o.recipient_phone,
+	(SELECT 
+		pv.product_variety_name
+	FROM jinju_flower.product p, jinju_flower.product_variety pv
+    WHERE o.product_id = p.product_id AND p.product_variety_code = pv.product_variety_code
+    ) AS product_variety_name,
+    (SELECT
+		a.title
+	FROM jinju_flower.product p, jinju_flower.article a
+    WHERE o.product_id = p.product_id AND p.article_id = a.article_id
+	) AS title,
+    (SELECT
+		t.type_name
+	FROM jinju_flower.type t
+    WHERE o.type_code = t.type_code
+    ) AS type_name
+FROM jinju_flower.order o
+WHERE
+	o.in_cart = #{in_cart}
+	AND
+	o.in_order = #{in_order} 
+  </select>
+  <update id="doApprove" parameterType="String">
+UPDATE jinju_flower.order
+SET is_approved = 'T'
+WHERE order_id = #{order_id}
+  </update>
+  <update id="doDeliver" parameterType="String">
+UPDATE jinju_flower.order
+SET is_delivered = 'T'
+WHERE order_id = #{order_id}
+  </update>
 </mapper>
