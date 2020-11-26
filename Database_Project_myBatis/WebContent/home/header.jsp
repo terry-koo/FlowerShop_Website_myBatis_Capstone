@@ -67,7 +67,7 @@
 							<ul class="dropdown">
 								<li><b><%=customerInfoHeader.getName() %></b> 님!</li>
 								<hr>
-								<li><a href="#">주문내역</a></li>
+								<li><a href="../basket/myOrder.jsp">주문내역</a></li>
 								<li><a href="../userInfo/userInfo.jsp">프로필</a></li>
 								<li><a href="../basket/basket.jsp">장바구니</a></li>
 								<li><a href="../login/doLogout.jsp">로그아웃</a></li>
@@ -87,8 +87,8 @@
 							<a href="#"><b style="color:white;">관리자 페에지</b></a>
 							<ul class="dropdown">
 								<li><a href="../admin/orderManagement.jsp">주문관리</a></li>
-								<li><a href="../admin/allMember.jsp">회원 조회</a></li>
-								<li><a href="product.jsp">상품 등록하기</a></li>
+								<li><a href="../admin/allMember.jsp">회원조회</a></li>
+								<li><a href="product.jsp">상품등록</a></li>
 							</ul>
 						</li>
 						<%} %>
