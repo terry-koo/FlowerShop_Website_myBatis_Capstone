@@ -100,8 +100,6 @@ try{
 			VProductManager.addElement(v);
 			
 		}
-
-=======
 		%>
 <script>
 var answer = confirm ("등록완료");
@@ -113,8 +111,6 @@ else{
 }
 </script>
 		<%
-		
->>>>>>> branch 'master' of https://github.com/terry-koo/database_project-myBatis-
 	}
 	else{
 	}
