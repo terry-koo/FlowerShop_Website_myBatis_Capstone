@@ -22,5 +22,9 @@ public class VProductManager {
 	public static List<VProductArticlePictureLatest> getList(){
 		return productArray;
 	}
+	
+	public static void addElement(VProductArticlePictureLatest v) {
+		productArray.add(0,v);
+	}
 
 }

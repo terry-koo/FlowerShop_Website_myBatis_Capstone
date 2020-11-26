@@ -1,3 +1,4 @@
+<%@page import="project.util.VProductManager"%>
 <%@page import="mybatis.model.Article"%>
 <%@page import="oracle.net.aso.n"%>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>    
@@ -78,9 +79,29 @@ try{
 	
 	if(state>0){
 		sqlSession.commit();
+		
+		if(result1>0 && result2>0){
+			VProductArticlePictureLatest v = new VProductArticlePictureLatest();
+			v.setArticle_id("A"+dateToHashCode);
+			v.setContent(content);
+			v.setCustomer_id("adminID");
+			v.setIs_available(available);
+			v.setIs_linked_to_product("T");
+			v.setIs_registered("T");
+			v.setPicture(pictureString);
+			v.setPicture_id("A"+dateToHashCode);
+			v.setPrice(price);
+			v.setProduct_id("P"+dateToHashCode);
+			v.setProduct_variety_code(productVarietyCode);
+			v.setRegistration_date(date);
+			v.setTitle(title);
+			
+			VProductManager.addElement(v);
+			
+		}
+
 	}
 	else{
-
 	}
 }
 finally{
