@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ include file="../admin/checkAuthority.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,7 +93,7 @@
  </tr>
  
  <tr>
-  <td colspan="2"><input type="submit" value="상품등록">  <input type="reset" value="다시작성"></td>
+  <td colspan="2"><input type="submit" value="상품등록"></td>
  
  </tr>
  

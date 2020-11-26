@@ -8,7 +8,7 @@
   <select id="selectPAP"  resultType="mybatis.model.VProductArticlePictureLatest">
    SELECT product_variety_code, is_available, product_id, price, article_id, customer_id, title, content, is_linked_to_product, is_registered, registration_date, picture_id, picture
    FROM v_product_article_picture_latest
-   ORDER BY registration_date ASC
+   ORDER BY registration_date DESC
   </select>
   
   

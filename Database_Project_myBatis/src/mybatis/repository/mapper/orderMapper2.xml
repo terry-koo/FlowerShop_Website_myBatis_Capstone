@@ -58,7 +58,8 @@ FROM jinju_flower.order o
 WHERE
 	o.in_cart = #{in_cart}
 	AND
-	o.in_order = #{in_order} 
+	o.in_order = #{in_order}
+ORDER BY o.order_date;
   </select>
   <update id="doApprove" parameterType="String">
 UPDATE jinju_flower.order

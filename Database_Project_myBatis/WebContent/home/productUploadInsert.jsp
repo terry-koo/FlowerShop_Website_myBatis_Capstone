@@ -78,10 +78,36 @@ try{
 	
 	if(state>0){
 		sqlSession.commit();
+		%>
+<script>
+var answer = confirm ("등록완료");
+if (answer){
+	window.location.href = "mainProduct.jsp";
+}
+else{
+	window.location.href = "mainProduct.jsp";
+}
+</script>
+		<%
+		
 	}
 	else{
 
 	}
+}
+catch(Exception e){
+	sqlSession.rollback();
+	%>
+<script>
+var answer = confirm ("등록실패..");
+if (answer){
+	window.location.href = "mainProduct.jsp";
+}
+else{
+	window.location.href = "mainProduct.jsp";
+}
+</script>
+	<%
 }
 finally{
 	sqlSession.close();
@@ -89,10 +115,7 @@ finally{
 
 %>
 
-<script>
-alert("insert success")
-history.go(-1);
-</script>
+
 
 
 
