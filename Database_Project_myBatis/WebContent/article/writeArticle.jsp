@@ -85,10 +85,10 @@ input{
 			
 		</tr>
 		<tr>
-			<td><input type="text" name="tag"></td>
+			<td><input type="text" name="tag" placeholder="#은 빼고 적어주세요."></td>
 		</tr>
 		<tr>
-			<td><input id="saveBTN" type="submit" value="저장" ></td>
+			<td><input id="saveBTN" type="submit" value="저장"></td>
 		</tr>
 	</table>
 </form>

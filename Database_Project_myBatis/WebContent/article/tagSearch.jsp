@@ -20,7 +20,6 @@ a{
 </style>
 <body>
 
-
 <div class="container">
 <button type="button" onclick="location.href='writeArticle.jsp'" style="float:right;">글쓰기</button>
 <table>

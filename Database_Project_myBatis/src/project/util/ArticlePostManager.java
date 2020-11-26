@@ -34,18 +34,30 @@ public class ArticlePostManager {
 	}
 
 	public static ArrayList<ArticlePost> getArticlePostList() {
+		if(articlePostList == null) {
+			reNewArticlePostList();
+		}
 		return articlePostList;
 	}
 
 	public static ArticlePost getArticlePostByIndex(int i) {
+		if(articlePostList == null) {
+			reNewArticlePostList();
+		}
 		return articlePostList.get(i);
 	}
 
 	public static ArticlePost getArticlePostByIndex(String i) {
+		if(articlePostList == null) {
+			reNewArticlePostList();
+		}
 		return articlePostList.get(Integer.valueOf(i));
 	}
 
 	public static ArticlePost getArticlePostByArticle_id(String article_id) {
+		if(articlePostList == null) {
+			reNewArticlePostList();
+		}
 		ArticlePost article = null;
 		for (ArticlePost articleElement : articlePostList) {
 			if (articleElement.getArticle_id().equals(article_id)) {
@@ -56,6 +68,9 @@ public class ArticlePostManager {
 		return article;
 	}
 	public static ArrayList<ArticlePost> getArticlePostListIncludeThisTag(String tag){
+		if(articlePostList == null) {
+			reNewArticlePostList();
+		}
 		return (ArrayList<ArticlePost>) articlePostList.stream().filter((article)->{
 		String[] tags = article.getTags();
 		for(int i = 0; i < tags.length; i++) {
@@ -82,15 +97,10 @@ public class ArticlePostManager {
 			int pictureState = sqlSession.insert(pictureMapperUri, pictureParam);
 			int tagState = 0;
 			for (int i = 0; i < tags.length; i++) {
-				if(tags[i].charAt(0) == '#') {
 					tagParam.put("tag_name", tags[i]);
-				}
-				else {
-					tagParam.put("tag_name", '#'+tags[i]);
-				}
-				tagState += sqlSession.insert(tagMapperUri, tagParam);
+					tagState += sqlSession.insert(tagMapperUri, tagParam);	
 			}
-
+			
 			if (articleState > 0 && pictureState > 0 && tagState == tags.length) {
 				sqlSession.commit();
 				result = 1;
@@ -99,6 +109,7 @@ public class ArticlePostManager {
 			}
 
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			sqlSession.rollback();
 			return result;
 		} finally {

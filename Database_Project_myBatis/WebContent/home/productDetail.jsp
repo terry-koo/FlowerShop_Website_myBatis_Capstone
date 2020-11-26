@@ -37,7 +37,7 @@
 <form action="order.jsp" method="post">
 <table>
 <tr>
-<td height="400px" width="70%" rowspan="6"><img src="<%=list.get(index).getPicture()%>"></td>
+<td height="400px" width="70%" rowspan="6"><img src="<%=list.get(index).getPicture()%>" style="width:920px;height:610px;"></td>
 <td>상품명 : <%= list.get(index).getTitle() %> </td>
 </tr>
 
@@ -51,8 +51,8 @@
 
 <tr>
 	<td>
-		타입 : <input type="radio" name="type" value="1">축하
-		<input type="radio" name="type" value="2">결혼
+		<b>타입 :</b> <input type="radio" name="type" value="1">축하
+		<input type="radio" name="type" value="2">결혼<br>
 		<input type="radio" name="type" value="3">입학
 		<input type="radio" name="type" value="4">장례
 		<input type="radio" name="type" value="5">이벤트

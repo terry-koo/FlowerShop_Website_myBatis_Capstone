@@ -10,6 +10,12 @@
 <meta charset="UTF-8">
 <title>상품 메인 페이지</title>
 </head>
+<style>
+	a{
+		color:black;
+	}
+</style>
+
 <body>
 
 
@@ -23,11 +29,11 @@
 List<VProductArticlePictureLatest> list =  VProductManager.getList();
 int size = list.size();
 	for (int i = 0; i < size; i+=4) {
-		out.print("<tr height=\"300px\">");
+		out.print("<tr height=\"260px\">");
 		for(int j=(0+i); j<(i+4); j++){
 			if(j>=size){break;}
-%>
-			<td ><img src="<%=list.get(j).getPicture()%>" style="max-width: 100%; height: auto;"></td>
+%>		
+			<td ><a href="productDetail.jsp?index=<%=j%>"><img src="<%=list.get(j).getPicture()%>" style="width: 248px; height: 200px; background-size:contain; "></td>	</a>
 			<%} %>
 		</tr>
 		<tr height="50px">
