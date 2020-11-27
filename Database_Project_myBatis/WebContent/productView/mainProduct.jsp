@@ -26,10 +26,9 @@
 
 <div style="height:170px; background-color: #e6f3fa;"></div>
 <div style="border: 1px #BDBDBD; background-color: #e6f3fa; margin:auto; padding: 5px; text-align: center;">
-<br>
 <h1>< 판매중인 상품  ></h1>
 
-<table style="margin:auto; width:1000px; table-layout:fixed;" border="1" >
+<table style="margin:auto; width:1000px; table-layout:fixed;" border="1" frame=void >
 
 
 <%
@@ -58,6 +57,14 @@ int size = list.size();
 		%>
 			<td><a href="productDetail.jsp?index=<%=k%>" >
 			<%=list.get(k).getPrice()%> 원</a></td>
+		
+		<%} %>
+		</tr>
+		<tr height="30px" style="border:hidden;">
+		<%for(int k=(0+i); k<(i+4); k++){ 
+			if(k>=size){break;}
+		%>
+			
 		
 		<%} %>
 		</tr>
