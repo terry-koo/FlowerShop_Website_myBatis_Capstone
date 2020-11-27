@@ -13,8 +13,8 @@ import mybatis.model.Article;
 import mybatis.model.Basket;
 import mybatis.model.CustomerInfo;
 import mybatis.model.Order;
-import mybatis.model.Picture;
 import mybatis.model.Product;
+import mybatis.model.Water;
 
 
 
@@ -109,6 +109,20 @@ public class SessionRepository {
 		try {
 			String statement = "mybatis.repository.mapper.productMapper2.insertProduct";
 			int result = sqlSession.insert(statement,product);
+			if(result>0) {
+				sqlSession.commit();
+			}
+			return result;
+		}finally {
+			sqlSession.close();
+		}
+	}
+	
+	public Integer insertWater(Water water) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			String statement = "mybatis.repository.mapper.waterMapper.insertWater";
+			int result = sqlSession.insert(statement,water);
 			if(result>0) {
 				sqlSession.commit();
 			}
