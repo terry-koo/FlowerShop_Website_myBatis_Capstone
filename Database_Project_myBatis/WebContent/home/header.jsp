@@ -50,7 +50,7 @@
 						<li class="active"><a href="<%=contextPath %>/home/index.jsp">홈으로</a></li>
 						
 						<li class="has-dropdown">
-						<a href="<%=contextPath %>/home/mainProduct.jsp">상품보기</a>
+						<a href="<%=contextPath %>/productView/mainProduct.jsp">상품보기</a>
 						</li>
 						<li><a href="<%=contextPath %>/article/article.jsp">게시판</a></li>
 						
