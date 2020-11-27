@@ -52,7 +52,7 @@
 						<li class="has-dropdown">
 						<a>상품보기</a>
 							<ul class="dropdown">
-								<li><a href="../home/mainProduct.jsp">꽃</a></li>
+								<li><a href="../productView/mainProduct.jsp">꽃</a></li>
 								<li><a href="#">정기 배송</a></li>
 							</ul>
 						</li>

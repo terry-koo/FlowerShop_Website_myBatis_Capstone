@@ -9,7 +9,7 @@
 </head>
 
 
-<body style="height:100%; background-color: #e6f3fa;">
+<body style="height:100%; background-color: #e6f3fa; color:black;">
 
 
 	

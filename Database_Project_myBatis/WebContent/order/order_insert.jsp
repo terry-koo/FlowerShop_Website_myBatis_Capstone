@@ -57,12 +57,12 @@ long type_code = Long.parseLong(request.getParameter("type_code"));
 %>
 
 <script>
-var answer = confirm ("주문완료! 현재 주문상태를 확인해주세요.");
+var answer = confirm ("주문완료! 현재 주문상태 바로 확인하기");
 if (answer){
-window.location.href = "index.jsp";
+window.location.href = "../basket/myOrder.jsp";
 }
 else{
-	window.location.href = "index.jsp";
+	window.location.href = "../home/index.jsp";
 }
 </script>
 

@@ -103,6 +103,6 @@
 	</header>
 	
 
-<jsp:include page="mainProduct.jsp"/>
+<jsp:include page="../productView/mainProduct.jsp"/>
 	</body>
 </html>

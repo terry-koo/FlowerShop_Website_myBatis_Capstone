@@ -34,7 +34,7 @@
 <div style="height:170px;"></div>
 <div style="border: 1px dashed #BDBDBD; background-color: #c2d0f2; margin:auto; padding: 5px; text-align: center;">
 
-<form action="order.jsp" method="post">
+<form action="../order/order.jsp" method="post">
 <table>
 <tr>
 <td height="400px" width="70%" rowspan="6"><img src="<%=list.get(index).getPicture()%>" style="width:920px;height:610px;"></td>
