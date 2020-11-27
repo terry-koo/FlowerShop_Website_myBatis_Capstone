@@ -43,6 +43,8 @@ Kakao.Auth.login({
 				  //document.getElementById('ph').src = res.properties.profile_image;
 				  var id = res.id;
 				  window.location.href = "http://localhost:8080/Database_Project_myBatis/login/kakaoDoLogin.jsp?kakaoid="+id;
+				  //window.location.href = "https://drflower.azurewebsites.net/Database_Project_myBatis/login/kakaoDoLogin.jsp?kakaoid="+id;
+				  
 				  
 			  }
 			  
