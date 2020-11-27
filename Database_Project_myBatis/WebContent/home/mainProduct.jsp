@@ -14,13 +14,20 @@
 	a{
 		color:black;
 	}
+	
+	table {
+  border-spacing: 10px;
+  border-collapse: separate;
+}
 </style>
 
 <body>
 
 
-<div style="height:170px;"></div>
-<div style="border: 1px dashed #BDBDBD; background-color: #c2d0f2; margin:auto; padding: 5px; text-align: center;">
+<div style="height:170px; background-color: #e6f3fa;"></div>
+<div style="border: 1px #BDBDBD; background-color: #e6f3fa; margin:auto; padding: 5px; text-align: center;">
+<br>
+<h1>< 판매중인 상품  ></h1>
 
 <table style="margin:auto; width:1000px; table-layout:fixed;" border="1" >
 
@@ -33,7 +40,7 @@ int size = list.size();
 		for(int j=(0+i); j<(i+4); j++){
 			if(j>=size){break;}
 %>		
-			<td ><a href="productDetail.jsp?index=<%=j%>"><img src="<%=list.get(j).getPicture()%>" style="width: 248px; height: 200px; background-size:contain; "></td>	</a>
+			<td ><a href="productDetail.jsp?index=<%=j%>"><img src="<%=list.get(j).getPicture()%>" style="width: 235px; height: 300px; background-size:contain; "></td>	</a>
 			<%} %>
 		</tr>
 		<tr height="50px">
@@ -41,7 +48,17 @@ int size = list.size();
 			if(k>=size){break;}
 		%>
 			<td><a href="productDetail.jsp?index=<%=k%>" >
-			<%=list.get(k).getTitle()%></a></td>
+			<b><%=list.get(k).getTitle()%></b></a></td>
+		
+		<%} %>
+		</tr>
+		<tr height="30px">
+		<%for(int k=(0+i); k<(i+4); k++){ 
+			if(k>=size){break;}
+		%>
+			<td><a href="productDetail.jsp?index=<%=k%>" >
+			<%=list.get(k).getPrice()%> 원</a></td>
+		
 		<%} %>
 		</tr>
 <%

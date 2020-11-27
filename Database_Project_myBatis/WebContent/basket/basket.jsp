@@ -22,7 +22,7 @@
   }
 </style>
 
-<body>
+<body style="background-color: #e6f3fa;">
 
 <%
 	List<Basket> basketList = null; 
@@ -46,8 +46,8 @@
 %>
 
 
-<div style="height:170px;"></div>
-<div style="border: 1px dashed #BDBDBD; background-color: #c2d0f2; margin:auto; padding: 5px; text-align: center;">
+<div style="height:170px; background-color: #e6f3fa;"></div>
+<div style="border: 1px #BDBDBD; background-color: #e6f3fa; margin:auto; padding: 5px; text-align: center;">
 <h1>내 장바구니</h1>
 
 <form action="basketToOrder.jsp" method="post">

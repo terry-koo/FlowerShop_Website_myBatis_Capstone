@@ -23,6 +23,7 @@ public class SessionRepository {
 	
 	static {
 		reNewSqlSessionFactory();
+		System.out.println("SessionRepository ready");
 	}
 	
 	public static SqlSession openSession() {

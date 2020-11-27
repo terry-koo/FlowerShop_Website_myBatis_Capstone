@@ -9,7 +9,7 @@
 </head>
 
 
-<body style="height:100%;">
+<body style="height:100%; background-color: #e6f3fa;">
 
 
 	
@@ -21,7 +21,7 @@
 <section id="uploadFormArea">
 <form action="productUploadInsert.jsp" method="post">
 
-<table border="1" style="width=700" >
+<table border="1" style="width=700; margin:auto;" >
 
  <tr>
   <td width="150">

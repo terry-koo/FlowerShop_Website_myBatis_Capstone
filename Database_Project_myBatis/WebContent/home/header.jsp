@@ -84,11 +84,11 @@
 						if(customerInfoHeader != null && customerInfoHeader.getAuthority_code() <= 2){
 						%>
 							<li class="has-dropdown">
-							<a href="#"><b style="color:white;">관리자 페에지</b></a>
+							<a href="#"><b style="color:red;">관리자 페이지</b></a>
 							<ul class="dropdown">
 								<li><a href="../admin/orderManagement.jsp">주문관리</a></li>
 								<li><a href="../admin/allMember.jsp">회원조회</a></li>
-								<li><a href="product.jsp">상품등록</a></li>
+								<li><a href="../home/product.jsp">상품등록</a></li>
 							</ul>
 						</li>
 						<%} %>
