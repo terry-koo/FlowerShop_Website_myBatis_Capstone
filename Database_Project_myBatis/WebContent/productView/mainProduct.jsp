@@ -30,7 +30,7 @@
 
 <table style="margin:auto; width:1000px; table-layout:fixed;" border="1" frame=void >
 
-
+		<tr>
 <%
 List<VProductArticlePictureLatest> list =  VProductManager.getList();
 int size = list.size();
@@ -39,34 +39,35 @@ int size = list.size();
 		for(int j=(0+i); j<(i+4); j++){
 			if(j>=size){break;}
 %>		
-			<td ><a href="productDetail.jsp?index=<%=j%>"><img src="<%=list.get(j).getPicture()%>" style="width: 235px; height: 300px; background-size:contain; "></td>	</a>
+			<td ><a href="productDetail.jsp?index=<%=j%>"><img src="<%=list.get(j).getPicture()%>" style="width: 235px; height: 300px; background-size:contain; ">	</a></td>
 			<%} %>
 		</tr>
+		
 		<tr height="50px">
-		<%for(int k=(0+i); k<(i+4); k++){ 
-			if(k>=size){break;}
-		%>
-			<td><a href="productDetail.jsp?index=<%=k%>" >
-			<b><%=list.get(k).getTitle()%></b></a></td>
-		
-		<%} %>
-		</tr>
-		<tr height="30px">
-		<%for(int k=(0+i); k<(i+4); k++){ 
-			if(k>=size){break;}
-		%>
-			<td><a href="productDetail.jsp?index=<%=k%>" >
-			<%=list.get(k).getPrice()%> 원</a></td>
-		
-		<%} %>
-		</tr>
-		<tr height="30px" style="border:hidden;">
-		<%for(int k=(0+i); k<(i+4); k++){ 
-			if(k>=size){break;}
-		%>
+			<%for(int k=(0+i); k<(i+4); k++){ 
+				if(k>=size){break;}
+			%>
+				<td><a href="productDetail.jsp?index=<%=k%>" >
+				<b><%=list.get(k).getTitle()%></b></a></td>
 			
+			<%} %>
+		</tr>
 		
-		<%} %>
+		<tr height="30px">
+			<%for(int k=(0+i); k<(i+4); k++){ 
+				if(k>=size){break;}
+			%>
+				<td><a href="productDetail.jsp?index=<%=k%>" >
+				<%=list.get(k).getPrice()%> 원</a></td>
+			
+			<%} %>
+		</tr>
+		
+		<tr height="30px" style="border:hidden;">
+			<%for(int k=(0+i); k<(i+4); k++){ 
+				if(k>=size){break;}
+			  } 
+			 %>
 		</tr>
 <%
 	}
