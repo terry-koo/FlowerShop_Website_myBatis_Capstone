@@ -165,7 +165,7 @@
                 <tr>
                     <td id="title"><font style="color:red;"><b>*</b></font></td>
                     <td>
-                        <select name="state">
+                        <select name="address">
                             <option value="서울특별시">서울특별시</option>
                             <option value="인천광역시">인천광역시</option>
                             <option value="부산광역시">부산광역시</option> 

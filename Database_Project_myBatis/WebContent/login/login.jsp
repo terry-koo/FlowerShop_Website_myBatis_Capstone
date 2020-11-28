@@ -99,6 +99,7 @@ console.log("Kakao init : "+Kakao.isInitialized());
   function loginWithKakao() {
     Kakao.Auth.authorize({
       redirectUri: 'http://localhost:8080/Database_Project_myBatis/login/kakaoLoginRedirected.jsp',
+      //redirectUri: 'https://drflower.azurewebsites.net/Database_Project_myBatis/login/kakaoLoginRedirected.jsp',
       scope : "account_email, age_range, gender, birthday,"
     })
   }
