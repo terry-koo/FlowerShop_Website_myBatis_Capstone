@@ -14,10 +14,10 @@ import javax.sql.DataSource;
 import mybatis.model.Water;
 import mybatis.repository.session.SessionRepository;
 
-public class Vision_Write {
-	private static Vision_Write vision = new Vision_Write();
+public class Write {
+	private static Write vision = new Write();
 
-	public static Vision_Write getWrite() {
+	public static Write getWrite() {
 		return vision;
 	}
 	private String returns = "";
@@ -28,13 +28,11 @@ public class Vision_Write {
 		SessionRepository a = new SessionRepository();
 		a.insertWater(water);
 		
-		returns = "success";
+		returns = "insert success";
 
 	} catch (Exception e) {
 		e.printStackTrace();
-	} finally {
-	    System.out.println("Vision_Write finally실행");
-	}
+	} 
 	return returns;
        }
 

@@ -5,26 +5,29 @@
 <%
    request.setCharacterEncoding("UTF-8");
    
-   String returns = "";
-   String type = request.getParameter("type");
-   String vision = request.getParameter("vision_write");
+
+   String num1 = request.getParameter("dataType");
 
 %>
 <%
-   if (type == null) {
+   if (num1 == null) {
+	   
 	   System.out.println("타입이 null 입니다");
       return;
-   }else if (type.equals("vision_write")) {
-      System.out.println("값을받았습니다."+vision);
-      Vision_Write vision_board = Vision_Write.getWrite();
-      returns = vision_board.write(vision);
-      out.println(returns);
-      System.out.println(returns);
-   }else if (type.equals("vision_list")) {
-      System.out.println("값을 리턴합니다.");
-      Vision_Board vision_board = Vision_Board.getVision_Board();
-      returns = vision_board.select();
-      out.println(returns);
-     System.out.println(returns);
+      
+   }else if (num1.equals("type1")) {
+	   
+	   String num2 = request.getParameter("num3");
+	   String num3 = request.getParameter("num3");
+       System.out.println("수신한 데이터 type1= "+ num2 + " : " + num3);
+       
+   }else if (num1.equals("type2")) {
+	   
+	   String age = request.getParameter("age");
+	   String sex = request.getParameter("sex");
+	   System.out.println("수신한 데이터 type2= "+ age + " : " + sex);
+	   
+   }else{
+      System.out.println("데이터 수신 실패");
    }
 %>
