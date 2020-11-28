@@ -39,7 +39,7 @@ int size = list.size();
 		for(int j=(0+i); j<(i+4); j++){
 			if(j>=size){break;}
 %>		
-			<td ><a href="productDetail.jsp?index=<%=j%>"><img src="<%=list.get(j).getPicture()%>" style="width: 235px; height: 300px; background-size:contain; ">	</a></td>
+			<td ><a href="<%=contextPath %>/productView/productDetail.jsp?index=<%=j%>"><img src="<%=list.get(j).getPicture()%>" style="width: 235px; height: 300px; background-size:contain; ">	</a></td>
 			<%} %>
 		</tr>
 		
@@ -47,7 +47,7 @@ int size = list.size();
 			<%for(int k=(0+i); k<(i+4); k++){ 
 				if(k>=size){break;}
 			%>
-				<td><a href="productDetail.jsp?index=<%=k%>" >
+				<td><a href="<%=contextPath %>/productView/productDetail.jsp?index=<%=k%>" >
 				<b><%=list.get(k).getTitle()%></b></a></td>
 			
 			<%} %>
@@ -57,7 +57,7 @@ int size = list.size();
 			<%for(int k=(0+i); k<(i+4); k++){ 
 				if(k>=size){break;}
 			%>
-				<td><a href="productDetail.jsp?index=<%=k%>" >
+				<td><a href="<%=contextPath %>/productView/productDetail.jsp?index=<%=k%>" >
 				<%=list.get(k).getPrice()%> 원</a></td>
 			
 			<%} %>
