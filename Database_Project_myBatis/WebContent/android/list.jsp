@@ -25,7 +25,7 @@
 	   
 	   String age = request.getParameter("age");
 	   String sex = request.getParameter("sex");
-	   System.out.println("수신한 데이터 type2= "+ age + " : " + sex); ////
+	   System.out.println("수신한 데이터 type2= "+ age + " : " + sex); //////
 	   
    }else{
       System.out.println("데이터 수신 실패");
