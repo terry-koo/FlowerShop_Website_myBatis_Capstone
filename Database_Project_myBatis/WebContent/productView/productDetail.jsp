@@ -38,7 +38,7 @@
 <table>
 <tr>
 <td height="400px" width="70%" rowspan="6"><img src="<%=list.get(index).getPicture()%>" style="width:920px;height:610px;"></td>
-<td>상품명 : <%= list.get(index).getTitle() %> </td>
+<td> 상품명 : <%= list.get(index).getTitle() %> </td>
 </tr>
 
 <tr>
