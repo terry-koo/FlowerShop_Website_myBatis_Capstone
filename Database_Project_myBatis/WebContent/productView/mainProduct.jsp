@@ -2,8 +2,8 @@
 <%@page import="mybatis.model.VProductArticlePictureLatest"%>
 <%@page import="java.util.List"%>
 <%@page import="mybatis.repository.session.SessionRepository"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>       
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +58,7 @@ int size = list.size();
 				if(k>=size){break;}
 			%>
 				<td><a href="<%=contextPath %>/productView/productDetail.jsp?index=<%=k%>" >
-				<%=list.get(k).getPrice()%> 원</a></td>
+				<fmt:formatNumber value="<%=list.get(k).getPrice()%>" type="currency"/>원</a></td>
 			
 			<%} %>
 		</tr>

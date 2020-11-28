@@ -1,8 +1,8 @@
 <%@page import="mybatis.model.VProductArticlePictureLatest"%>
 <%@page import="java.util.List"%>
 <%@page import="project.util.VProductManager"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@
 </tr>
 
 <tr>
-	<td>가격 : <%= list.get(index).getPrice() %> 원</td>
+	<td>가격 :<fmt:formatNumber value="<%= list.get(index).getPrice() %>" type="currency"/> 원</td>
 </tr>
 
 <tr>
