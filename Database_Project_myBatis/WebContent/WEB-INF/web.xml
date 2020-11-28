@@ -12,11 +12,7 @@
   
  <jsp-config>
  	<jsp-property-group>
- 		<url-pattern>/home/*.jsp</url-pattern>
- 		<include-prelude>/home/header.jsp</include-prelude>
- 	</jsp-property-group>
- 	<jsp-property-group>
- 		<url-pattern>/article/*.jsp</url-pattern>
+ 		<url-pattern>*.jsp</url-pattern>
  		<include-prelude>/home/header.jsp</include-prelude>
  	</jsp-property-group>
  </jsp-config>
