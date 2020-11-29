@@ -42,7 +42,7 @@
 			
 		//dataType 불일치	
 		default:
-			System.out.println("데이터 송수신 실패");
+			System.out.println("데이터 송수신 실패");//
 			break;
 	}	
 
