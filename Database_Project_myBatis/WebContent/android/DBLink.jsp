@@ -23,7 +23,7 @@
 			CustomerInfo customerInfo = null;
 			try {
 				customerInfo = sqlSession.selectOne(stmtURI, parameter);
-				session.setAttribute("customerInfo", customerInfo);
+				session.setAttribute("session_customerInfo", customerInfo);
 			}
 			catch(Exception e){
 				session.setAttribute("session_message", "loginFailed");
@@ -35,7 +35,7 @@
 			
 			StringBuilder  result = new StringBuilder();
 			result.append("|result=|");
-			CustomerInfo customer = (CustomerInfo)session.getAttribute("customerInfo");
+			CustomerInfo customer = (CustomerInfo)session.getAttribute("session_customerInfo");
 			result.append(customer.getAddress());
 			out.print(result.toString());
 			break;
