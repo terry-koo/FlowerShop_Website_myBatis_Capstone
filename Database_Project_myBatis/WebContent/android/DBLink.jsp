@@ -23,8 +23,14 @@
 			CustomerInfo customerInfo = null;
 			try {
 				customerInfo = sqlSession.selectOne(stmtURI, parameter);
-				session.setAttribute("session_customerInfo", customerInfo);
-				session.setAttribute("session_login", "login_success");
+				
+				if(customerInfo != null){
+					session.setAttribute("session_customerInfo", customerInfo);
+					session.setAttribute("session_login", "LOGIN_SUCCESS");
+				}else{
+					session.setAttribute("session_login", "LOGIN_FAIL");
+				}
+				
 			}
 			catch(Exception e){
 				session.setAttribute("session_message", "loginFailed");
