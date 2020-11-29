@@ -34,7 +34,7 @@
 			}
 			
 			StringBuilder  result = new StringBuilder();
-			result.append("|result=|");
+			result.append("|result=|\n");
 			CustomerInfo customer = (CustomerInfo)session.getAttribute("session_customerInfo");
 			result.append(customer.getAddress());
 			out.print(result.toString());
