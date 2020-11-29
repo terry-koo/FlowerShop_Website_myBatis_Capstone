@@ -24,6 +24,7 @@
 			try {
 				customerInfo = sqlSession.selectOne(stmtURI, parameter);
 				session.setAttribute("session_customerInfo", customerInfo);
+				session.setAttribute("session_login", "login_success");
 			}
 			catch(Exception e){
 				session.setAttribute("session_message", "loginFailed");
@@ -34,9 +35,12 @@
 			}
 			
 			StringBuilder  result = new StringBuilder();
-			result.append("|result=|\n");
-			CustomerInfo customer = (CustomerInfo)session.getAttribute("session_customerInfo");
-			result.append(customer.getAddress());
+			result.append("result=>\n");
+			
+			/*CustomerInfo customer = (CustomerInfo)session.getAttribute("session_customerInfo");
+			result.append(customer.getAddress()); */
+			
+			result.append((String)session.getAttribute("session_login"));
 			out.print(result.toString());
 			break;
 			
