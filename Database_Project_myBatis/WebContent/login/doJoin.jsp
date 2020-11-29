@@ -50,6 +50,7 @@ else{
 			out.println(result1*result2);
 		}
 		else{
+			sqlSession.rollback();
 			session.setAttribute("session_message", "joinFailed");
 			response.sendRedirect("login.jsp");
 		}
