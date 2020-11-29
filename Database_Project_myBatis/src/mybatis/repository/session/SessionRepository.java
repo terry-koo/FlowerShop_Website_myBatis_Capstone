@@ -162,9 +162,14 @@ public class SessionRepository {
 		try {
 			String statement = "mybatis.repository.mapper.papMapper2.selectPAP";
 			return (List<Object>)sqlSession.selectList(statement);
-		}finally{
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		finally{
 			sqlSession.close();
 		}
+		return null;
 	}
 	
 	public static List<Object> selectBasket(String id) {

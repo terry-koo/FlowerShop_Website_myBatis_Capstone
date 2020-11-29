@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import project.util.ArticlePostManager;
+
 
 public class AzureMySQLDB {
 	private static SqlSessionFactory AzureSessionFacotry;
@@ -13,6 +15,11 @@ public class AzureMySQLDB {
 	static {
 		reNewSqlSessionFactory();
 		System.out.println("AzureMySQLDB ready");
+		new Thread(
+				()->{
+					//To load ArticlePostManager when server starts
+					ArticlePostManager.getArticlePostList(); 
+				}).start();
 	}
 	
 	public static SqlSession openSession() {

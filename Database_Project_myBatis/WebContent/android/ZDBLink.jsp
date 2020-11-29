@@ -9,25 +9,25 @@
 	public static String showZMainProduct(){
 		List<VProductArticlePictureLatest> productList = VProductManager.getList();
 		StringBuilder  result = new StringBuilder();
-		result.append(",result=,");
+		result.append("|result=|");
 		for(VProductArticlePictureLatest product : productList){
-			result.append("product start,");
-			result.append(product.getProduct_variety_code()+",");
-			result.append(product.getIs_available()+"");
-			result.append(product.getProduct_id()+",");
-			result.append(product.getPrice()+",");
-			result.append(product.getArticle_id()+",");
-			result.append(product.getCustomer_id()+",");
-			result.append(product.getTitle()+",");
-			result.append(product.getContent()+",");
-			result.append(product.getIs_linked_to_product()+",");
-			result.append(product.getIs_registered()+",");
-			result.append(product.getRegistration_date()+",");
-			result.append(product.getPicture_id()+",");
-			result.append(product.getPicture()+",");
-			result.append("product end,");
+			result.append("product start|");
+			result.append(product.getProduct_variety_code()+"|");
+			result.append(product.getIs_available()+"|");
+			result.append(product.getProduct_id()+"|");
+			result.append(product.getPrice()+"|");
+			result.append(product.getArticle_id()+"|");
+			result.append(product.getCustomer_id()+"|");
+			result.append(product.getTitle()+"|");
+			result.append(product.getContent()+"|");
+			result.append(product.getIs_linked_to_product()+"|");
+			result.append(product.getIs_registered()+"|");
+			result.append(product.getRegistration_date()+"|");
+			result.append(product.getPicture_id()+"|");
+			result.append(product.getPicture()+"|");
+			result.append("product end|");
 		}
-		result.append("end,");
+		result.append("end|");
 		return result.toString();
 	}
 %>
