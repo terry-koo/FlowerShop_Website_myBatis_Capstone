@@ -48,7 +48,7 @@
 	switch(opCode){
 	case "showZMainProduct":
 		out.println(showZMainProduct());
-		System.out.println("don't blame me. I did it.");
+		//System.out.println("don't blame me. I did it.");
 		break;
 	}
 

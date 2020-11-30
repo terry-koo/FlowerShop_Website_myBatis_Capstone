@@ -58,7 +58,7 @@ int size = list.size();
 				if(k>=size){break;}
 			%>
 				<td><a href="<%=contextPath %>/productView/productDetail.jsp?index=<%=k%>" >
-				<fmt:formatNumber value="<%=list.get(k).getPrice()%>" type="currency"/>원</a></td>
+				<fmt:formatNumber value="<%=list.get(k).getPrice()%>" pattern="#,###"/>원</a></td>
 			
 			<%} %>
 		</tr>

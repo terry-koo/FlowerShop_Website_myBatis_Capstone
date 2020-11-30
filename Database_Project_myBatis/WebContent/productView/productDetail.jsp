@@ -42,7 +42,7 @@
 </tr>
 
 <tr>
-	<td>가격 :<fmt:formatNumber value="<%= list.get(index).getPrice() %>" type="currency"/> 원</td>
+	<td>가격 :<fmt:formatNumber value="<%= list.get(index).getPrice() %>" pattern="#,###"/> 원</td>
 </tr>
 
 <tr>
