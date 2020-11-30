@@ -1,3 +1,4 @@
+<%@page import="project.util.NowAsHashCode"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="android.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -48,6 +49,59 @@
 			
 			result.append((String)session.getAttribute("session_login"));
 			out.print(result.toString());
+			break;
+			
+		//회원가입	
+		case "register":
+			StringBuilder  result2 = new StringBuilder();
+			result2.append("result=>\n");
+			
+			String UserEmail = request.getParameter("id");
+			String UserPwd = request.getParameter("password");
+			String UserName = request.getParameter("name");
+			String UserAddress = request.getParameter("address");
+			String UserPhone = request.getParameter("phone");
+			String customer_id = NowAsHashCode.toString("cb");
+			Customer customer = new Customer();
+			customer.setEmail(UserEmail);
+			customer.setPassword(UserPwd);
+			customer.setName(UserName);
+			customer.setAddress(UserAddress);
+			customer.setPhone(UserPhone);
+			customer.setCustomer_id(customer_id);
+			customer.setAuthority_code(4);
+			
+			System.out.println(UserEmail+"/"+UserPwd+"/"+UserName+"/"+UserAddress+"/"+UserPhone+"/"+customer_id+"/"+customer.birthday+"/"+customer.gender);
+			
+			String stmtURI_customer_basic = "mybatis.repository.mapper.androidCustomerMapper.insertCustomerBasic";
+			String stmtURI_customer_detail = "mybatis.repository.mapper.androidCustomerMapper.insertCustomerDetail";
+			SqlSession sqlSession2 = AzureMySQLDB.openSession();
+			try{
+				int re1 = sqlSession2.insert(stmtURI_customer_basic, customer);
+				int re2 = sqlSession2.insert(stmtURI_customer_detail, customer);
+				if(re1*re2>0){
+					sqlSession2.commit();
+					result2.append("REGISTER_SUCCESS");
+					out.print(result2.toString());
+				}
+				else{
+					sqlSession2.rollback();
+					result2.append("REGISTER_FAIL");
+					out.print(result2.toString());
+					System.out.print(result2.toString());
+				}
+			}
+			catch(Exception e){
+				sqlSession2.rollback();
+				result2.append("REGISTER_FAIL");
+				out.print(result2.toString());
+				System.out.print(result2.toString());
+				System.out.print(e);
+			}
+			finally{
+				sqlSession2.close();
+			}
+			
 			break;
 			
 		//dataType 불일치	
