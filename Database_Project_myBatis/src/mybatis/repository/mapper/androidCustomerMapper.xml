@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.repository.mapper.androidCustomerMapper">
+  
+  
+  <insert id="insertCustomerBasic" parameterType="android.Customer">
+  	INSERT INTO customer_basic(customer_id, authority_code, password, name, email)
+  	VALUES (#{customer_id}, #{authority_code}, #{password}, #{name}, #{email})
+  </insert>
+  <insert id="insertCustomerDetail" parameterType="android.Customer">
+  	INSERT INTO customer_detail(customer_id, phone, address,birthday,gender)
+  	VALUES (#{customer_id}, #{phone}, #{address},#{birthday},#{gender});
+  </insert>
+  
+
+  
+</mapper>
