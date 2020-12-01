@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="
+    project.util.SHAEncoder
+" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +32,7 @@ try{
 	String password = request.getParameter("sec");
 	if(!password.equals("")){
 		HashMap<String, String> passwordParam = new HashMap<>();
-		passwordParam.put("password",password);
+		passwordParam.put("password",SHAEncoder.doSHAEncode(request.getParameter("sec")));
 		passwordParam.put("customer_id",customerInfoHeader.getCustomer_id());
 		
 		String updatePasswordUri = "mybatis.repository.mapper.customerMapper.updateCustomerBasicPassword";

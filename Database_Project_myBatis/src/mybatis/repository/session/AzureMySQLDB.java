@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import project.util.ArticlePostManager;
 
-
 public class AzureMySQLDB {
 	private static SqlSessionFactory AzureSessionFacotry;
 	
@@ -20,6 +19,7 @@ public class AzureMySQLDB {
 					//To load ArticlePostManager when server starts
 					ArticlePostManager.getArticlePostList(); 
 				}).start();
+		
 	}
 	
 	public static SqlSession openSession() {

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="
+	project.util.SHAEncoder
+" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +18,7 @@
 	String password = request.getParameter("psw");
 	HashMap<String, String> parameter = new HashMap<>();
 	parameter.put("email", email);
-	parameter.put("password", password);
+	parameter.put("password", SHAEncoder.doSHAEncode(request.getParameter("psw")));
 	
 
 	String stmtURI = "mybatis.repository.mapper.customerMapper.selectCustomerInfoByEmailAndPW";

@@ -11,8 +11,6 @@
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 </head>
-
-
 	
 <%-- 						
 						<!-- 로그인여부에 따라 보이는 항목이 다름 -->

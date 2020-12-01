@@ -1,9 +1,11 @@
+<%@page import="java.security.MessageDigest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="
 	project.util.VProductManager,
 	mybatis.model.VProductArticlePictureLatest,
 	java.util.List
+
 "%>
 <%!
 	public static String showZMainProduct(){

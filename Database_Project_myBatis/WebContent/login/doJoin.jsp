@@ -1,7 +1,9 @@
+<%@page import="project.util.SHAEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="
-	project.util.NowAsHashCode
+	project.util.NowAsHashCode,
+	project.util.SHAEncoder
 " %>
 <!DOCTYPE html>
 <html>
@@ -29,7 +31,7 @@ else{
 	
 	newUserInfoMap.put("customer_id",customer_id);
 	newUserInfoMap.put("authority_code", "4");
-	newUserInfoMap.put("password", request.getParameter("sec"));
+	newUserInfoMap.put("password", SHAEncoder.doSHAEncode(request.getParameter("sec")) );
 	newUserInfoMap.put("name", request.getParameter("name"));
 	newUserInfoMap.put("email", request.getParameter("email"));
 	newUserInfoMap.put("birthday", strBirthday);
