@@ -14,11 +14,15 @@
 <body>
 
 <% 
-String strBirthday = request.getParameter("birthyyyy");
-strBirthday += "-"+request.getParameter("birthmm");
-strBirthday += "-"+request.getParameter("birthdd");
+String strBirthday = request.getParameter("-"+"birthyyyy"+"-");
+if(strBirthday != null){
+	strBirthday += "-"+request.getParameter("birthmm");
+	strBirthday += "-"+request.getParameter("birthdd");
+}
 String address = request.getParameter("address");
 address += " "+request.getParameter("address_detail");
+
+
 String customer_id = NowAsHashCode.toString("cb");
 if(request.getParameter("kakaoID")!= null){
 	customer_id = request.getParameter("kakaoID");
@@ -49,7 +53,8 @@ else{
 		int result2 = sqlSession.insert(stmtURI_customer_detail, newUserInfoMap);
 		if(result1*result2>0){
 			sqlSession.commit();
-			out.println(result1*result2);
+			session.setAttribute("session_message", "joinSuccess");
+			response.sendRedirect("login.jsp");
 		}
 		else{
 			sqlSession.rollback();
@@ -67,8 +72,7 @@ else{
 	}
 	
 	
-	session.setAttribute("session_message", "joinSuccess");
-	response.sendRedirect("login.jsp");
+	
 	
 	
 %>
