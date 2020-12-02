@@ -30,6 +30,8 @@
 				if(customerInfo != null){
 					session.setAttribute("session_customerInfo", customerInfo);
 					session.setAttribute("session_login", "LOGIN_SUCCESS");
+					
+					System.out.println(((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id());
 				}else{
 					session.setAttribute("session_login", "LOGIN_FAIL");
 				}
@@ -48,9 +50,13 @@
 			result.append("result=>\n");
 			
 			/*CustomerInfo customer = (CustomerInfo)session.getAttribute("session_customerInfo");
-			result.append(customer.getAddress()); */
+			result.append(customer.getAddress()); *///
 			
-			result.append((String)session.getAttribute("session_login"));
+			if(session.getAttribute("session_customerInfo") != null){
+			result.append((String)session.getAttribute("session_login")+"?"+((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id());
+			}else{
+				result.append("WRONGID");
+			}
 			out.print(result.toString());
 			break;
 			
