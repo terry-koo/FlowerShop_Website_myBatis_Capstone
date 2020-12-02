@@ -7,10 +7,11 @@
 	mybatis.repository.session.SessionRepository,
 	mybatis.model.VProductArticlePictureLatest,
 	mybatis.model.Order,
+	mybatis.model.OrderInfoForAdmin,
 	java.util.Date,
-	java.util.List
-	
-
+	java.util.List,
+	java.util.ArrayList,
+	java.util.stream.Collectors
 "%>
 
 
@@ -31,8 +32,14 @@
 	case "showZMainProduct":
 		out.println(showZMainProduct());
 		break;
+	case "showZMyOrders":
+		out.println(showZMyOrders("adminID"));
+		System.out.println("Don't blame me, I did it");
+		break;
 	case "makeOrder":
-		out.println(makeOrder(//((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id(),
+		out.println(
+				makeOrder(
+				//((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id(),
 				"adminID",
 				request.getParameter("orderType"),
 				request.getParameter("amount"),
@@ -44,7 +51,6 @@
 				request.getParameter("price")
 				));
 		break;
-		
 	}
 
 
@@ -109,13 +115,58 @@
 	SessionRepository s = new SessionRepository();
 	StringBuilder  result = new StringBuilder();
 	result.append("|result=|");
-	if(s.insertOrder(order) > 0){	//insert success
+	if(s.insertOrder(order).intValue() > 0){	//insert success
 		result.append("success|");
 	}
 	else{
 		result.append("fail|");
 	}
 	
+	result.append("end|");
+	return result.toString();
+}
+%>
+
+<%!
+//주문조회
+	public static String showZMyOrders(String customerID){
+
+	String orderStmtURI = "mybatis.repository.mapper.orderMapper2.selectMyOrder";
+	SqlSession sqlSession = AzureMySQLDB.openSession();	
+	ArrayList<OrderInfoForAdmin> orderInfo = null;
+	try{
+		List<Object> temp = sqlSession.selectList(orderStmtURI, customerID);
+		orderInfo = (ArrayList<OrderInfoForAdmin>) temp.stream().map(obj->(OrderInfoForAdmin)obj).collect(Collectors.toList());
+	}
+	catch(Exception e){
+		System.out.println(e.getMessage());
+	}
+	finally{
+		sqlSession.close();
+	}
+	
+	StringBuilder result = new StringBuilder();
+	result.append("|result=|");
+	for(OrderInfoForAdmin order : orderInfo){
+		result.append("order start|");
+		result.append(order.getOrder_id()+"|");
+		result.append(order.getCustomer_id()+"|");
+		result.append(order.getIs_delivered()+"|");
+		result.append(order.getIs_approved()+"|");
+		result.append(order.getIn_cart()+"|");
+		result.append(order.getIn_order()+"|");
+		result.append(order.getPrice()+"|");
+		result.append(order.getQuantity()+"|");
+		result.append(order.getRequest_comment()+"|");
+		result.append(order.getOrder_date()+"|");
+		result.append(order.getRecipient_name()+"|");
+		result.append(order.getRecipient_address()+"|");
+		result.append(order.getRecipient_phone()+"|");
+		result.append(order.getProduct_variety_name()+"|");
+		result.append(order.getTitle()+"|");
+		result.append(order.getType_name()+"|");
+		result.append("order end|");
+	}
 	result.append("end|");
 	return result.toString();
 }

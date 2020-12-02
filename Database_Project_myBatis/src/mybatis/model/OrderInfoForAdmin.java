@@ -19,6 +19,7 @@ public class OrderInfoForAdmin {
 	private String product_variety_name;
 	private String title;
 	private String type_name;
+	
 	public String getOrder_id() {
 		return order_id;
 	}
