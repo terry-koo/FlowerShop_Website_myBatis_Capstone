@@ -103,10 +103,10 @@ try{
 <script>
 var answer = confirm ("등록완료");
 if (answer){
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 else{
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 </script>
 		<%
@@ -120,10 +120,10 @@ catch(Exception e){
 <script>
 var answer = confirm ("등록실패..");
 if (answer){
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 else{
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 </script>
 	<%

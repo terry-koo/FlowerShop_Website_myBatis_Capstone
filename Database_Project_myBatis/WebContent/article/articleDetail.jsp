@@ -31,7 +31,7 @@ Review[] reviews = article.getReviews();
 			for(int i = 0; i < tags.length-1; i++){
 				a.append(tags[i]+",");
 			}
-			a.append(tags[a.length()-1]);
+			a.append(tags[tags.length-1]);
 	
 %>
 <meta name="keywords" content="<%=a.toString()%>">

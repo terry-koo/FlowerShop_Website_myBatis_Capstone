@@ -14,7 +14,7 @@
 <body>
 
 <% 
-String strBirthday = request.getParameter("-"+"birthyyyy"+"-");
+String strBirthday = request.getParameter("birthyyyy");
 if(strBirthday != null){
 	strBirthday += "-"+request.getParameter("birthmm");
 	strBirthday += "-"+request.getParameter("birthdd");
