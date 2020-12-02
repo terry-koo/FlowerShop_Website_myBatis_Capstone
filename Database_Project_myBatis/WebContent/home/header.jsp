@@ -8,6 +8,7 @@
 	mybatis.model.CustomerInfo
 "%>
 <!DOCTYPE html>
+
 <html>
 <%	
 	String contextPath = request.getContextPath();
@@ -37,7 +38,11 @@
 	<script src="<%=contextPath %>/home/js/main.js"></script>
 	<script src="<%=contextPath %>/home/js/modernizr-2.6.2.min.js"></script>
 </head>
-
+<style>
+body{
+	background-color:#e6f3fa;
+}
+</style>
 
 <nav class="gtco-nav" role="navigation">
 		<div class="gtco-container" style="background-color:rgba(10,10,10,0.6);">

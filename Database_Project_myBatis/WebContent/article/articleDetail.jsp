@@ -25,6 +25,17 @@ Review[] reviews = article.getReviews();
 <head>
 <meta charset="UTF-8">
 <title><%=article.getTitle()%></title>
+<%			
+			StringBuilder a = new StringBuilder();
+			String[] tags = article.getTags();
+			for(int i = 0; i < tags.length-1; i++){
+				a.append(tags[i]+",");
+			}
+			a.append(tags[a.length()-1]);
+	
+%>
+<meta name="keywords" content="<%=a.toString()%>">
+
 </head>
 <link rel="stylesheet" href="articleDetail.css">
 <body>
@@ -51,7 +62,7 @@ Review[] reviews = article.getReviews();
 	<tr>
 		<td colspan="3">태그: &nbsp;
 		<%
-			String[] tags = article.getTags();
+			tags = article.getTags();
 			for(int i = 0; i < tags.length; i++){
 		%>
 			<a href="tagSearch.jsp?tag=<%=tags[i]%>">#<%=tags[i]%></a>,&nbsp; 

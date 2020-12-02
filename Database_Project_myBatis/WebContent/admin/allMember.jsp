@@ -37,7 +37,7 @@ for(int i=0; i<size; i++) {
 }
 %>
 <div style="height:170px;"></div>
-<div style="border: 1px dashed #BDBDBD; background-color: #c2d0f2; margin:auto; padding: 5px; text-align: center;">
+<div style=" margin:auto; padding: 5px; text-align: center;">
 <h1>회원 리스트</h1>
 <table>
 

@@ -20,7 +20,9 @@ a{
 </style>
 
 <body> 
+<div style="width:10px;height:200px;">
 
+</div>
 <div class="container">
 <button type="button" onclick="location.href='writeArticle.jsp'" style="float:right;">글쓰기</button>
 <table>
@@ -46,7 +48,7 @@ a{
 	<tr>
 	
 		<td><%=i%></td>
-		<td style="width:425px;"><a href="articleDetail.jsp?article_id=<%=article.getArticle_id()%>"><%=article.getTitle() %></a></td>
+		<td style="width:425px;"><a href="articleDetail.jsp?article_id=<%=article.getArticle_id()%>" style="color:black;"><%=article.getTitle() %></a></td>
 		<td><%=article.getRegistration_date() %></td>
 		<td><%=article.getAuthor_name() %></td>
 
