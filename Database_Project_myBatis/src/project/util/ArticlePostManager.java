@@ -107,6 +107,10 @@ public class ArticlePostManager {
 				insertArticleListByArticleID(articleParam.get("article_id"));
 				return result;
 			}
+			else {
+				sqlSession.rollback();
+				return -1;
+			}
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -115,8 +119,6 @@ public class ArticlePostManager {
 		} finally {
 			sqlSession.close();
 		}
-		result = 0;
-		return result;
 
 	}
 

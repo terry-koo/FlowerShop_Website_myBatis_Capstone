@@ -30,10 +30,9 @@
 	switch(opCode){
 	case "showZMainProduct":
 		out.println(showZMainProduct());
-		//System.out.println("don't blame me. I did it.");
 		break;
 	case "makeOrder":
-		makeOrder(//((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id(),
+		out.println(makeOrder(//((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id(),
 				"adminID",
 				request.getParameter("orderType"),
 				request.getParameter("amount"),
@@ -43,7 +42,7 @@
 				request.getParameter("requestComment"),
 				request.getParameter("productID"),
 				request.getParameter("price")
-				);
+				));
 		break;
 		
 	}
@@ -57,6 +56,7 @@
 </html>
 
 <%!
+//상품보기
 	public static String showZMainProduct(){
 		List<VProductArticlePictureLatest> productList = VProductManager.getList();
 		StringBuilder  result = new StringBuilder();
@@ -84,8 +84,9 @@
 %>
 
 <%!
+//주문
 	public static String makeOrder(String customerID, String orderType, String amount, String name, String phone, String address, String requestComment, String productID, String price){
-System.out.println(customerID+"\n"+orderType+"\n"+amount+"\n"+name+"\n"+phone+"\n"+address+"\n"+requestComment+"\n"+productID+"\n"+price);
+//System.out.println(customerID+"\n"+orderType+"\n"+amount+"\n"+name+"\n"+phone+"\n"+address+"\n"+requestComment+"\n"+productID+"\n"+price);
 
 	Order order = new Order();
 	order.setCustomer_id(customerID);
@@ -100,14 +101,22 @@ System.out.println(customerID+"\n"+orderType+"\n"+amount+"\n"+name+"\n"+phone+"\
 	order.setProduct_id(productID);
 	order.setQuantity(Integer.parseInt(amount));
 	order.setRequest_comment(requestComment);
-	System.out.println("asdfsssdf22");
 	order.setType_code(Integer.parseInt(orderType));
 	order.setRecipient_address(address);
 	order.setRecipient_name(name);
 	order.setRecipient_phone(phone);
 	
 	SessionRepository s = new SessionRepository();
-	s.insertOrder(order);
-	return "asdf";
+	StringBuilder  result = new StringBuilder();
+	result.append("|result=|");
+	if(s.insertOrder(order) > 0){	//insert success
+		result.append("success|");
+	}
+	else{
+		result.append("fail|");
+	}
+	
+	result.append("end|");
+	return result.toString();
 }
 %>

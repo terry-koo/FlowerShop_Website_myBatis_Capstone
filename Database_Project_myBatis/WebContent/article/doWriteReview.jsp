@@ -39,10 +39,14 @@
 			ArticlePostManager.updateArticleReview(article_id);
 			response.sendRedirect("articleDetail.jsp?article_id="+article_id);
 		}
+		else{
+			sqlSession.rollback();
+			response.sendRedirect("articleDetail.jsp?article_id="+article_id);
+		}
 	}
 	catch(Exception e){
 		sqlSession.rollback();
-		response.sendRedirect("articleDetail.jsp");
+		response.sendRedirect("articleDetail.jsp?article_id="+article_id);
 	}
 	finally{
 		sqlSession.close();
