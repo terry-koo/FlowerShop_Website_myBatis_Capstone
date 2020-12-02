@@ -1,3 +1,4 @@
+<%@page import="project.util.SHAEncoder"%>
 <%@page import="project.util.NowAsHashCode"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="android.*"%>
@@ -15,9 +16,10 @@
 	
 			String email = request.getParameter("id");
 			String password = request.getParameter("password");
+			System.out.println("로그인 시도 : " +"아이디 = " + email + "/비밀번호= " + password + "/ip= " + request.getRemoteAddr());
 			HashMap<String, String> parameter = new HashMap<>();
 			parameter.put("email", email);
-			parameter.put("password", password);
+			parameter.put("password", SHAEncoder.doSHAEncode(password));
 			
 			String stmtURI = "mybatis.repository.mapper.customerMapper.selectCustomerInfoByEmailAndPW";
 			SqlSession sqlSession = AzureMySQLDB.openSession();
@@ -35,7 +37,8 @@
 			}
 			catch(Exception e){
 				session.setAttribute("session_message", "loginFailed");
-				response.sendRedirect("login.jsp");
+				out.print("LOGIN_FAIL");
+				
 			}
 			finally{
 				sqlSession.close();
@@ -64,7 +67,7 @@
 			String customer_id = NowAsHashCode.toString("cb");
 			Customer customer = new Customer();
 			customer.setEmail(UserEmail);
-			customer.setPassword(UserPwd);
+			customer.setPassword(SHAEncoder.doSHAEncode(UserPwd));
 			customer.setName(UserName);
 			customer.setAddress(UserAddress);
 			customer.setPhone(UserPhone);
