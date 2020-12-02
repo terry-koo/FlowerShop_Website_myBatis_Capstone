@@ -40,8 +40,7 @@ SessionRepository a = new SessionRepository();
 Article article = new Article();
 article.setArticleId("A"+dateToHashCode);
 article.setContent(content);
-//article.setCustomerId(customerInfoHeader.getCustomer_id()); 로그인시 사용자 id 불러와 저장
-article.setCustomerId("adminID");
+article.setCustomerId(customerInfoHeader.getCustomer_id());
 article.setisLinkedToProduct("T");
 article.setIsRegistered("T");
 article.setRegistrationDate(date);
