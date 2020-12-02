@@ -35,7 +35,9 @@ else{
 	
 	newUserInfoMap.put("customer_id",customer_id);
 	newUserInfoMap.put("authority_code", "4");
-	newUserInfoMap.put("password", SHAEncoder.doSHAEncode(request.getParameter("sec")) );
+	if(request.getParameter("sec")!=null){
+		newUserInfoMap.put("password", SHAEncoder.doSHAEncode(request.getParameter("sec")) );
+	}
 	newUserInfoMap.put("name", request.getParameter("name"));
 	newUserInfoMap.put("email", request.getParameter("email"));
 	newUserInfoMap.put("birthday", strBirthday);
