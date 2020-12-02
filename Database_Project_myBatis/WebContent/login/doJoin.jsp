@@ -9,12 +9,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>가입 동작</title>
 </head>
 <body>
 
 <% 
-String strBirthday = request.getParameter("-"+"birthyyyy"+"-");
+String strBirthday = request.getParameter("birthyyyy");
 if(strBirthday != null){
 	strBirthday += "-"+request.getParameter("birthmm");
 	strBirthday += "-"+request.getParameter("birthdd");
@@ -35,7 +35,9 @@ else{
 	
 	newUserInfoMap.put("customer_id",customer_id);
 	newUserInfoMap.put("authority_code", "4");
-	newUserInfoMap.put("password", SHAEncoder.doSHAEncode(request.getParameter("sec")) );
+	if(request.getParameter("sec")!=null){
+		newUserInfoMap.put("password", SHAEncoder.doSHAEncode(request.getParameter("sec")) );
+	}
 	newUserInfoMap.put("name", request.getParameter("name"));
 	newUserInfoMap.put("email", request.getParameter("email"));
 	newUserInfoMap.put("birthday", strBirthday);

@@ -40,8 +40,7 @@ SessionRepository a = new SessionRepository();
 Article article = new Article();
 article.setArticleId("A"+dateToHashCode);
 article.setContent(content);
-//article.setCustomerId(customerInfoHeader.getCustomer_id()); 로그인시 사용자 id 불러와 저장
-article.setCustomerId("adminID");
+article.setCustomerId(customerInfoHeader.getCustomer_id());
 article.setisLinkedToProduct("T");
 article.setIsRegistered("T");
 article.setRegistrationDate(date);
@@ -104,10 +103,10 @@ try{
 <script>
 var answer = confirm ("등록완료");
 if (answer){
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 else{
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 </script>
 		<%
@@ -121,10 +120,10 @@ catch(Exception e){
 <script>
 var answer = confirm ("등록실패..");
 if (answer){
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 else{
-	window.location.href = "mainProduct.jsp";
+	window.location.href = "../productView/mainProduct.jsp";
 }
 </script>
 	<%

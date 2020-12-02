@@ -33,14 +33,13 @@
 		out.println(showZMainProduct());
 		break;
 	case "showZMyOrders":
-		out.println(showZMyOrders("adminID"));
+		out.println(showZMyOrders(((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id()));
 		System.out.println("Don't blame me, I did it");
 		break;
 	case "makeOrder":
 		out.println(
 				makeOrder(
-				//((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id(),
-				"adminID",
+				((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id(),
 				request.getParameter("orderType"),
 				request.getParameter("amount"),
 				request.getParameter("name"),
