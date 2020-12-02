@@ -195,14 +195,22 @@ public class SessionRepository {
 	
 	public Integer insertOrder(Order order) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int result = 0;
 		try {
 			String statement = "mybatis.repository.mapper.orderMapper2.insertOrder";
-			int result = sqlSession.insert(statement,order);
+			result = sqlSession.insert(statement,order);
 			if(result>0) {
 				sqlSession.commit();
+				return result;
 			}
+			sqlSession.rollback();
 			return result;
-		}finally {
+		}
+			catch(Exception e) {
+				sqlSession.rollback();
+				return result;
+			}
+		finally {
 			sqlSession.close();
 		}
 	}

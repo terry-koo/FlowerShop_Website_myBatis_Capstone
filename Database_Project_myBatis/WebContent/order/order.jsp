@@ -8,6 +8,7 @@
 <%@page import="mybatis.model.Order"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="../login/loginIsRequired.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
