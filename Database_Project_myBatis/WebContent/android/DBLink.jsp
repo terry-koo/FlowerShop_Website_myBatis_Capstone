@@ -30,6 +30,8 @@
 				if(customerInfo != null){
 					session.setAttribute("session_customerInfo", customerInfo);
 					session.setAttribute("session_login", "LOGIN_SUCCESS");
+					
+					System.out.println(((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id());
 				}else{
 					session.setAttribute("session_login", "LOGIN_FAIL");
 				}
