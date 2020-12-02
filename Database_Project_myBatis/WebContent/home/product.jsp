@@ -73,7 +73,7 @@
       </button>
 
       <!-- Choose File TEXT Markup -->
-      <span id="custom-space"> <strong> No</strong> File, Selected!😭</span>
+      <span id="custom-space"> <strong> No</strong> File, Selected!</span>
   </div>
    <div class="preview_holder">
       <div id="preview">
