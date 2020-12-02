@@ -50,7 +50,7 @@
 			result.append("result=>\n");
 			
 			/*CustomerInfo customer = (CustomerInfo)session.getAttribute("session_customerInfo");
-			result.append(customer.getAddress()); */
+			result.append(customer.getAddress()); *///
 			
 			result.append((String)session.getAttribute("session_login"));
 			out.print(result.toString());
