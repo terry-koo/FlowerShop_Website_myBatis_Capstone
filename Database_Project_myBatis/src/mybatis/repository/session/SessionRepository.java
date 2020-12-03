@@ -84,7 +84,7 @@ public class SessionRepository {
 		}
 	}
 	
-	
+	///
 	//장바구니에서 주문으로 변경
 	public Integer updateOrder(Order order) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
