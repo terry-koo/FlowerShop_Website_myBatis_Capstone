@@ -55,7 +55,7 @@
 			if(session.getAttribute("session_customerInfo") != null){
 			result.append((String)session.getAttribute("session_login")+"?"+((CustomerInfo)session.getAttribute("session_customerInfo")).getCustomer_id());
 			}else{
-				result.append("WRONGID");
+				result.append("LOGIN_FAIL");
 			}
 			out.print(result.toString());
 			break;
