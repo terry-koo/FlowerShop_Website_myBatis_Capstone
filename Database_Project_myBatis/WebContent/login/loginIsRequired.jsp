@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>This Page requires login</title>
 </head>
 <body>
 <%
