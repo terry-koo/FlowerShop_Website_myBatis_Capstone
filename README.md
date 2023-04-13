@@ -1,5 +1,5 @@
 # FlowerShop_Website_myBatis_Capstone
-🌻소상공인과 함께 수행한 웹 홈페이지 제작
+🌻소상공인 돕기 :: 웹 홈페이지 제작
 
 ## 1. 기술 
 - Skill stack 
